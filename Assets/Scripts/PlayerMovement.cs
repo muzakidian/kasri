@@ -10,7 +10,7 @@ public enum PlayerState{
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 15;
+    public float speed;
     public PlayerState currentState;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
     }
 
     // Update is called once per frame
@@ -68,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MoveCharacter()
     {
+        change.Normalize();
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime
         );
