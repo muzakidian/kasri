@@ -7503,6 +7503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  currentState: 0
   startingPosition: {fileID: 11400000, guid: 74b0bf196fba6bc43a45de2f95091246, type: 2}
 --- !u!50 &1347757200
 Rigidbody2D:
@@ -7538,15 +7539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3890332125189061261, guid: e2af608a9528b2047a0649d4b2e2035e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.9789746
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3890332125189061261, guid: e2af608a9528b2047a0649d4b2e2035e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.9789746
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3890332125189061261, guid: e2af608a9528b2047a0649d4b2e2035e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.9789746
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3890332125189061261, guid: e2af608a9528b2047a0649d4b2e2035e, type: 3}
       propertyPath: m_LocalPosition.x

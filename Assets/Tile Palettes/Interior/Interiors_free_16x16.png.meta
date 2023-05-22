@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -23623,19 +23623,19 @@ TextureImporter:
       Interiors_free_16x16_963: 841959535
       Interiors_free_16x16_986: -1701951078
       Interiors_free_16x16_107: 952886461
+      Interiors_free_16x16_1047: -63683721
       Interiors_free_16x16_485: 1634604801
       Interiors_free_16x16_951: -1379537176
-      Interiors_free_16x16_166: 2110819112
-      Interiors_free_16x16_624: -284176991
-      Interiors_free_16x16_334: 1817438781
-      Interiors_free_16x16_688: 1398918093
-      Interiors_free_16x16_141: -394544214
-      Interiors_free_16x16_381: 1360105508
-      Interiors_free_16x16_685: 1311597290
-      Interiors_free_16x16_335: -1035390283
       Interiors_free_16x16_826: -840949638
+      Interiors_free_16x16_166: 2110819112
+      Interiors_free_16x16_688: 1398918093
+      Interiors_free_16x16_334: 1817438781
+      Interiors_free_16x16_624: -284176991
+      Interiors_free_16x16_141: -394544214
+      Interiors_free_16x16_685: 1311597290
+      Interiors_free_16x16_381: 1360105508
+      Interiors_free_16x16_335: -1035390283
       Interiors_free_16x16_962: -1462615462
-      Interiors_free_16x16_1047: -63683721
       Interiors_free_16x16_720: -530186379
       Interiors_free_16x16_109: 406736059
       Interiors_free_16x16_820: 1341755258
@@ -23666,8 +23666,8 @@ TextureImporter:
       Interiors_free_16x16_1053: 1344740179
       Interiors_free_16x16_24: -277726718
       Interiors_free_16x16_375: -1457810923
-      Interiors_free_16x16_650: 1652051172
       Interiors_free_16x16_743: -2124196051
+      Interiors_free_16x16_650: 1652051172
       Interiors_free_16x16_1009: -941827674
       Interiors_free_16x16_757: 2144124554
       Interiors_free_16x16_770: -178385582
@@ -23677,12 +23677,12 @@ TextureImporter:
       Interiors_free_16x16_1091: -1012126477
       Interiors_free_16x16_362: 1190039247
       Interiors_free_16x16_697: -1768339965
-      Interiors_free_16x16_495: 2143001097
-      Interiors_free_16x16_729: -1844207528
       Interiors_free_16x16_950: 1205344110
-      Interiors_free_16x16_1019: 467623960
+      Interiors_free_16x16_729: -1844207528
       Interiors_free_16x16_1034: 894086077
+      Interiors_free_16x16_1019: 467623960
       Interiors_free_16x16_646: -1232168065
+      Interiors_free_16x16_495: 2143001097
       Interiors_free_16x16_912: -256606269
       Interiors_free_16x16_656: -767084515
       Interiors_free_16x16_1068: -1927297013
@@ -23875,6 +23875,7 @@ TextureImporter:
       Interiors_free_16x16_561: -391802061
       Interiors_free_16x16_730: 1933698574
       Interiors_free_16x16_517: -543586445
+      Interiors_free_16x16_1113: 1380438287
       Interiors_free_16x16_798: 1239938991
       Interiors_free_16x16_652: -169829366
       Interiors_free_16x16_874: 1379732891
@@ -23910,10 +23911,10 @@ TextureImporter:
       Interiors_free_16x16_19: -2145554814
       Interiors_free_16x16_98: -1515764826
       Interiors_free_16x16_205: -92301669
-      Interiors_free_16x16_713: 2126044557
       Interiors_free_16x16_790: -1675308612
-      Interiors_free_16x16_855: -972281361
       Interiors_free_16x16_893: 1173144745
+      Interiors_free_16x16_855: -972281361
+      Interiors_free_16x16_713: 2126044557
       Interiors_free_16x16_327: 1893144133
       Interiors_free_16x16_202: -513276344
       Interiors_free_16x16_589: 197433519
@@ -23922,7 +23923,6 @@ TextureImporter:
       Interiors_free_16x16_196: -977238148
       Interiors_free_16x16_52: -1583108178
       Interiors_free_16x16_291: -1926837666
-      Interiors_free_16x16_1113: 1380438287
       Interiors_free_16x16_258: -2095584278
       Interiors_free_16x16_250: -558518668
       Interiors_free_16x16_147: -1243800890
@@ -23930,13 +23930,13 @@ TextureImporter:
       Interiors_free_16x16_548: -508966105
       Interiors_free_16x16_1086: 878472256
       Interiors_free_16x16_721: 292366199
-      Interiors_free_16x16_541: 1765808901
       Interiors_free_16x16_801: -1909315266
+      Interiors_free_16x16_541: 1765808901
+      Interiors_free_16x16_806: 523436755
       Interiors_free_16x16_279: -377983793
+      Interiors_free_16x16_755: -930237638
       Interiors_free_16x16_140: 1208228617
       Interiors_free_16x16_243: -817074054
-      Interiors_free_16x16_755: -930237638
-      Interiors_free_16x16_806: 523436755
       Interiors_free_16x16_795: 986661219
       Interiors_free_16x16_178: 1669280099
       Interiors_free_16x16_938: 902276264
@@ -24175,17 +24175,17 @@ TextureImporter:
       Interiors_free_16x16_746: 1295081521
       Interiors_free_16x16_132: 1902755011
       Interiors_free_16x16_134: -1962592902
+      Interiors_free_16x16_1088: 246501872
       Interiors_free_16x16_504: 797594078
-      Interiors_free_16x16_405: 1374171190
-      Interiors_free_16x16_231: 2127875724
       Interiors_free_16x16_252: 1371403079
+      Interiors_free_16x16_231: 2127875724
+      Interiors_free_16x16_405: 1374171190
       Interiors_free_16x16_387: 1679829417
       Interiors_free_16x16_681: 1835858289
       Interiors_free_16x16_321: -1615790698
       Interiors_free_16x16_687: -1842132513
       Interiors_free_16x16_731: -1121707738
       Interiors_free_16x16_594: 885533632
-      Interiors_free_16x16_1088: 246501872
       Interiors_free_16x16_238: -525843710
       Interiors_free_16x16_549: -2105662411
       Interiors_free_16x16_410: 1004671553
@@ -24198,14 +24198,14 @@ TextureImporter:
       Interiors_free_16x16_566: -1681337071
       Interiors_free_16x16_478: 710630029
       Interiors_free_16x16_443: 754277059
-      Interiors_free_16x16_540: -777157985
       Interiors_free_16x16_997: 1350266370
-      Interiors_free_16x16_1074: -581647219
       Interiors_free_16x16_1094: 1617095773
+      Interiors_free_16x16_540: -777157985
       Interiors_free_16x16_133: 1139076778
       Interiors_free_16x16_206: -289949407
       Interiors_free_16x16_1029: 296662563
       Interiors_free_16x16_1075: 1845534504
+      Interiors_free_16x16_1074: -581647219
       Interiors_free_16x16_1085: 497512322
       Interiors_free_16x16_345: -2007182096
       Interiors_free_16x16_1092: -1806386319
