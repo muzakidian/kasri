@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b76400f5427bb941a7ab165d955a48a, type: 3}
   m_Name: HearthContainers
   m_EditorClassIdentifier: 
-  initialValue: 0
-  RuntimeValue: 0
+  initialValue: 3
+  RuntimeValue: 3
