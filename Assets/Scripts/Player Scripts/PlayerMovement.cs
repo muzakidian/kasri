@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public Sinyal playerHealthSignal;
     private Vector2 inputMovement;
     public VectorValue startingPosition;
+    public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -45,20 +47,17 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        // change = Vector3.zero;
-        // change.x = Input.GetAxisRaw("Horizontal");
-        // change.y = Input.GetAxisRaw("Vertical");
+        // Apakah player sedang dalam ineraksi?
+        if(currentState == PlayerState.interact)
+        {
+            return;
+        }
+
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack 
            && currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCo());
         }
-        
-        // else if (currentState == PlayerState.walk)
-        // {
-        //     UpdateAnimationAndMove();    
-        // }
-        
     }
 
     private IEnumerator AttackCo()
@@ -68,7 +67,30 @@ public class PlayerMovement : MonoBehaviour
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
-        currentState = PlayerState.walk;
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    public void RaiseItem()
+    {
+        if (playerInventory.currentItem != null)
+        {
+            if (currentState != PlayerState.interact)
+            {
+                animator.SetBool("receiveItem", true);
+                currentState = PlayerState.interact;
+                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            }
+            else
+            {
+                animator.SetBool("receiveItem", false);
+                currentState = PlayerState.idle;
+                receivedItemSprite.sprite = null;
+                playerInventory.currentItem = null;
+            }
+        }
     }
 
     void UpdateAnimationAndMove()
