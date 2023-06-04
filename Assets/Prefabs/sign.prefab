@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2840474494901831975
+--- !u!1 &996639408514377427
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2837326879736969537}
-  - component: {fileID: 2710092916454916463}
-  - component: {fileID: 2861245017933982415}
-  - component: {fileID: 2860643272041214481}
-  - component: {fileID: 2841525035862394658}
+  - component: {fileID: 996639408514377428}
+  - component: {fileID: 996639408514377431}
+  - component: {fileID: 996639408514377430}
+  - component: {fileID: 996639408514377425}
+  - component: {fileID: 996639408514377424}
   m_Layer: 0
   m_Name: sign
   m_TagString: Untagged
@@ -20,28 +20,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2837326879736969537
+--- !u!4 &996639408514377428
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840474494901831975}
+  m_GameObject: {fileID: 996639408514377427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.5, y: -2, z: 0}
+  m_LocalPosition: {x: -39.89064, y: 22.582354, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2710092916454916463
+--- !u!212 &996639408514377431
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840474494901831975}
+  m_GameObject: {fileID: 996639408514377427}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1704460807
+  m_SortingLayerID: -1704011249
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300222, guid: 275c0a091801c4f3cbf7d43ef7702e68, type: 3}
@@ -87,13 +87,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2861245017933982415
+--- !u!61 &996639408514377430
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840474494901831975}
+  m_GameObject: {fileID: 996639408514377427}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -113,13 +113,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!61 &2860643272041214481
+--- !u!61 &996639408514377425
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840474494901831975}
+  m_GameObject: {fileID: 996639408514377427}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -139,21 +139,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.297123}
   m_EdgeRadius: 0
---- !u!114 &2841525035862394658
+--- !u!114 &996639408514377424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840474494901831975}
+  m_GameObject: {fileID: 996639408514377427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e00b14e11b849d2a3ea1ef51681a3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ed9ddb76ab506c409189dddb9bfe727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: 45ee6e0e9d72647d7950db59dd6dc5f9, type: 2}
-  contextOff: {fileID: 11400000, guid: a033b5336cf004b698ed051865d1ac55, type: 2}
+  context: {fileID: 11400000, guid: b94d462a48462cd419dbc4aa460ecbe9, type: 2}
+  playerInRange: 0
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
-  dialog: Pond Ahead
-  playerInRange: 0
+  dialog: Jembatan Suhat
