@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d06e3a68e5fca845823cc583a832355, type: 3}
   m_Name: Kunci Kecil
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: c08bdd1e4ea6b014d8e91a4bd0594c85, type: 3}
+  itemSprite: {fileID: 783317628, guid: ab528006073ef1245bb6bbbd8fe0b00c, type: 3}
   itemDescription: Ini adalah kunci kecil, mungkin ada pintu di sekitar sini?
   isKey: 1
