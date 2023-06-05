@@ -217,6 +217,7 @@ MonoBehaviour:
   baseAttack: 1
   moveSpeed: 3
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  knockEffect: {fileID: 5145629745277929789, guid: c179a76ab7bf1e14eae4cfbcf9e651dc, type: 3}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 4
