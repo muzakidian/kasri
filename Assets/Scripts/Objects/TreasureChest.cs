@@ -5,18 +5,29 @@ using UnityEngine.UI;
 
 public class TreasureChest : Interactable {
 
+    [Header("Contents")]
     public Item contents;
     public Inventory playerInventory;
     public bool isOpen;
+    public BoolValue storedOpen;
+
+    [Header("Sinyal dan Dialog")]
     public Sinyal raiseItem;
     public GameObject dialogBox;
     public Text dialogText;
+
+    [Header("Animation")]
     private Animator anim;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-	}
+        isOpen = storedOpen.RuntimeValue;
+        if(isOpen)
+        {
+            anim.SetBool("opened", true);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,11 +35,11 @@ public class TreasureChest : Interactable {
         {
             if(!isOpen)
             {
-                // Open the chest
+                // Membuka chest
                 OpenChest();
             }else
             {
-                // Chest is already open
+                // Chest terbuka
                 ChestAlreadyOpen();
             }
         }
@@ -40,23 +51,24 @@ public class TreasureChest : Interactable {
         dialogBox.SetActive(true);
         // dialog text = contents text
         dialogText.text = contents.itemDescription;
-        // add contents to the inventory
+        // menambahkan content (item) ke inventory
         playerInventory.AddItem(contents);
         playerInventory.currentItem = contents;
-        // Raise the signal to the player to animate
+        // memunculkan sinyal ke player untuk memulai animasi
         raiseItem.Raise();
-        // raise the context clue
+        // memunculkan context clue
         context.Raise();
-        // set the chest to opened
+        // set chest untuk terbuka
         isOpen = true;
         anim.SetBool("opened", true);
+        storedOpen.RuntimeValue = isOpen;
     }
 
     public void ChestAlreadyOpen()
     {
         // Dialog off
         dialogBox.SetActive(false);
-        // raise the signal to the player to stop animating
+        // memunculkan sinyal ke player untuk stop animasi
         raiseItem.Raise();
     }
 
