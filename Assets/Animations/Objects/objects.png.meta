@@ -2610,13 +2610,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_97
+      name: switchUp
       rect:
         serializedVersion: 2
         x: 0
         y: 160
-        width: 14
-        height: 31
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2631,13 +2631,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_98
+      name: switchDown
       rect:
         serializedVersion: 2
         x: 16
         y: 160
-        width: 14
-        height: 31
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3521,7 +3521,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3542,7 +3542,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3563,7 +3563,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3584,7 +3584,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3607,14 +3607,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      objects_4: 21300008
       objects_118: 21300236
-      objects_98: 21300196
       objects_84: 21300168
       objects_134: 21300268
       objects_44: 21300088
       objects_78: 21300156
       objects_113: 21300226
       objects_122: 21300244
+      switchDown: 21300196
       objects_45: 21300090
       objects_116: 21300232
       objects_83: 21300166
@@ -3622,7 +3623,6 @@ TextureImporter:
       objects_41: 21300082
       objects_89: 21300178
       objects_109: 21300218
-      objects_128: 21300256
       objects_3: 21300006
       objects_119: 21300238
       objects_18: 21300036
@@ -3670,11 +3670,11 @@ TextureImporter:
       objects_70: 21300140
       objects_106: 21300212
       objects_131: 21300262
-      objects_87: 21300174
       objects_104: 21300208
       objects_107: 21300214
-      objects_7: 21300014
       objects_80: 21300160
+      objects_7: 21300014
+      objects_87: 21300174
       objects_22: 21300044
       objects_47: 21300094
       objects_115: 21300230
@@ -3684,7 +3684,6 @@ TextureImporter:
       objects_72: 21300144
       objects_26: 21300052
       objects_101: 21300202
-      objects_97: 21300194
       objects_63: 21300126
       objects_105: 21300210
       objects_74: 21300148
@@ -3739,6 +3738,7 @@ TextureImporter:
       objects_103: 21300206
       objects_141: 21300282
       objects_60: 21300120
+      switchUp: 21300194
       objects_108: 21300216
       objects_17: 21300034
       objects_68: 21300136
@@ -3749,7 +3749,7 @@ TextureImporter:
       objects_61: 21300122
       objects_88: 21300176
       objects_127: 21300254
-      objects_4: 21300008
+      objects_128: 21300256
       objects_20: 21300040
   spritePackingTag: 
   pSDRemoveMatte: 0
