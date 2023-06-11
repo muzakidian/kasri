@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatValue : ScriptableObject, ISerializationCallbackReceiver {
 
-    [Header("Value yang berjalan di game")]
     public float initialValue;
-    [Header("Value default saat menjalankan game")]
-    public float RuntimeValue;
-    [HideInInspector]
 
-    public void OnAfterDeserialize() { 
-        initialValue = RuntimeValue; 
+    [HideInInspector]
+    public float RuntimeValue;
+
+    public void OnAfterDeserialize(){
+        RuntimeValue = initialValue;
     }
+
     public void OnBeforeSerialize(){}
 }
