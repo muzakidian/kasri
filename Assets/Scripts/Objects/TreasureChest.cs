@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TreasureChest : Interactable {
+public class TreasureChest : Interactable
+{
 
     [Header("Contents")]
     public Item contents;
@@ -19,25 +20,28 @@ public class TreasureChest : Interactable {
     [Header("Animation")]
     private Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         anim = GetComponent<Animator>();
         isOpen = storedOpen.RuntimeValue;
-        if(isOpen)
+        if (isOpen)
         {
             anim.SetBool("opened", true);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("attack") && playerInRange)
         {
-            if(!isOpen)
+            if (!isOpen)
             {
                 // Membuka chest
                 OpenChest();
-            }else
+            }
+            else
             {
                 // Chest terbuka
                 ChestAlreadyOpen();

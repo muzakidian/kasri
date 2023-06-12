@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KemungkinanNyawa
   m_EditorClassIdentifier: 
   loots:
-  - thisLoot: {fileID: 0}
-    lootChance: 0
-  - thisLoot: {fileID: 0}
-    lootChance: 0
+  - thisLoot: {fileID: 7050010754022350163, guid: 17ff225bca64262489eabda3157aee5d, type: 3}
+    lootChance: 50
+  - thisLoot: {fileID: 4679741357082150504, guid: 0ee42624810e60744a944d8d6e921250, type: 3}
+    lootChance: 25
