@@ -45,7 +45,10 @@ public class Enemy : MonoBehaviour {
         health -= damage;
         if(health <= 0)
         {
-            roomSignal.Raise();
+            if (roomSignal != null)
+            {
+                roomSignal.Raise();
+            }
             DeathEffect();
             this.gameObject.SetActive(false);
         }
