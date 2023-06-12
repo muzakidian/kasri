@@ -26,9 +26,13 @@ public class Enemy : MonoBehaviour {
     public GameObject deathEffect;
     private float deathEffectDelay = 1f;
 
+    [Header("Sinyal Musuh Mati")]
+    public Sinyal roomSignal;
     private void Awake()
     {
         health = maxHealth.initialValue;
+        // set enemies agar tetap pada posisi awal setelah pindah room (tanpa otak atik inspector)
+        homePosition = transform.position;
     }
 
         private void OnEnable()
@@ -41,6 +45,7 @@ public class Enemy : MonoBehaviour {
         health -= damage;
         if(health <= 0)
         {
+            roomSignal.Raise();
             DeathEffect();
             this.gameObject.SetActive(false);
         }

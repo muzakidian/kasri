@@ -216,7 +216,8 @@ MonoBehaviour:
   enemyName: mujaki
   baseAttack: 0
   moveSpeed: 0
-  deathEffect: {fileID: 0}
+  homePosition: {x: 0, y: 0}
+  deathEffect: {fileID: 7990714344675476265, guid: caf3809ab911fa640913685d18c42263, type: 3}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
   chaseRadius: 6
