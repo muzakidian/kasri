@@ -11261,6 +11261,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &887434879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8664747687398912466, guid: b13a2c55a1a68554398bbde521899dac, type: 3}
+  m_PrefabInstance: {fileID: 1930619018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &889124432
 GameObject:
   m_ObjectHideFlags: 0
@@ -12097,6 +12102,7 @@ GameObject:
   - component: {fileID: 1068465935}
   - component: {fileID: 1068465934}
   - component: {fileID: 1068465936}
+  - component: {fileID: 1068465937}
   m_Layer: 0
   m_Name: CM vcam1 Room 1
   m_TagString: Untagged
@@ -12175,6 +12181,29 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 201901401}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1068465937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068465933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1173436105
 GameObject:
   m_ObjectHideFlags: 0
@@ -17871,6 +17900,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1483375742938027201, guid: b13a2c55a1a68554398bbde521899dac, type: 3}
   m_PrefabInstance: {fileID: 1930619018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540482252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887434879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: 739e58cf809c41b4a932eb015c1108d4, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1 &1640215247
 GameObject:
   m_ObjectHideFlags: 0
@@ -21315,6 +21404,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   homePosition: {x: -28, y: 18}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
   roomSignal: {fileID: 0}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
@@ -21539,6 +21629,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   homePosition: {x: -36, y: 18}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
   roomSignal: {fileID: 0}
   myRigidbody: {fileID: 0}
   target: {fileID: 0}
@@ -21595,6 +21686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010591ff8a47d0741a55b696efd7d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
 --- !u!1 &1563889533197746083
 GameObject:
   m_ObjectHideFlags: 0
@@ -21853,6 +21945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010591ff8a47d0741a55b696efd7d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
 --- !u!1 &2490441565088353797
 GameObject:
   m_ObjectHideFlags: 0
@@ -22270,6 +22363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010591ff8a47d0741a55b696efd7d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
 --- !u!1 &5101829329457031168
 GameObject:
   m_ObjectHideFlags: 0
@@ -22302,6 +22396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010591ff8a47d0741a55b696efd7d2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
 --- !u!212 &5101829329457031172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22458,6 +22553,7 @@ MonoBehaviour:
   moveSpeed: 0
   homePosition: {x: -32, y: 32}
   deathEffect: {fileID: 7990714344675476265, guid: caf3809ab911fa640913685d18c42263, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 0}
   myRigidbody: {fileID: 0}
   target: {fileID: 1540482243}
@@ -23231,6 +23327,7 @@ MonoBehaviour:
   moveSpeed: 2
   homePosition: {x: -28.98, y: 55.43}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 11400000, guid: d0d1d2ff8ffa0ba4eaf602e04323352b, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 1540482243}
@@ -23456,6 +23553,7 @@ MonoBehaviour:
   moveSpeed: 2
   homePosition: {x: -26.33, y: 58.86}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 11400000, guid: d0d1d2ff8ffa0ba4eaf602e04323352b, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 1540482243}
@@ -23483,6 +23581,7 @@ MonoBehaviour:
   moveSpeed: 2
   homePosition: {x: -31.9, y: 57.85}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 11400000, guid: d0d1d2ff8ffa0ba4eaf602e04323352b, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 1540482243}
@@ -23906,6 +24005,7 @@ MonoBehaviour:
   moveSpeed: 2
   homePosition: {x: -36.46, y: 59}
   deathEffect: {fileID: 2898378613919458484, guid: 4baa3b3f4831b74468a37ce95ee96024, type: 3}
+  thisLoot: {fileID: 0}
   roomSignal: {fileID: 11400000, guid: d0d1d2ff8ffa0ba4eaf602e04323352b, type: 2}
   myRigidbody: {fileID: 0}
   target: {fileID: 1540482243}
