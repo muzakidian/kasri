@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour {
     [Header("Death Effects")]
     public GameObject deathEffect;
     private float deathEffectDelay = 1f;
+    public LootTable thisLoot;
 
     [Header("Sinyal Musuh Mati")]
     public Sinyal roomSignal;
@@ -45,12 +46,25 @@ public class Enemy : MonoBehaviour {
         health -= damage;
         if(health <= 0)
         {
+            DeathEffect();
+            MakeLoot();
             if (roomSignal != null)
             {
                 roomSignal.Raise();
             }
-            DeathEffect();
             this.gameObject.SetActive(false);
+        }
+    }
+    private void MakeLoot()
+    {
+        if(thisLoot != null)
+        {
+            Powerup current = thisLoot.LootPowerup();
+            if(current != null)
+            {
+                //Menajatuhkan lootingan tepat saat musuh mati
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+            }
         }
     }
 
