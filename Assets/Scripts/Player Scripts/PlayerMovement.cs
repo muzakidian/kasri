@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
 
+    [Header("Peluru")]
+    public GameObject peluru;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(AttackCo());
         }
+        else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack
+           && currentState != PlayerState.stagger)
+        {
+                StartCoroutine(SecondAttackCo());
+        }
     }
 
     private IEnumerator AttackCo()
@@ -71,6 +79,32 @@ public class PlayerMovement : MonoBehaviour
         {
             currentState = PlayerState.walk;
         }
+    }
+
+    private IEnumerator SecondAttackCo()
+    {
+        //animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+        yield return null;
+        MakeWaterball();
+        //animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.3f);
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+        private void MakeWaterball()
+    {
+            Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+            Waterball waterball = Instantiate(peluru, transform.position, Quaternion.identity).GetComponent<Waterball>();
+            waterball.Setup(temp, ChooseWaterballDirection());
+    }
+
+        Vector3 ChooseWaterballDirection()
+    {
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX"))* Mathf.Rad2Deg;
+        return new Vector3(0, 0, temp);
     }
 
     public void RaiseItem()
