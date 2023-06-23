@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public VectorValue startingPosition;
     public Inventory playerInventory;
     public SpriteRenderer receivedItemSprite;
+    public Sinyal reduceMagic;
 
     [Header("Peluru")]
     public GameObject peluru;
@@ -83,11 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator SecondAttackCo()
     {
-        //animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
         MakeWaterball();
-        //animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
         if (currentState != PlayerState.interact)
         {
@@ -96,9 +95,14 @@ public class PlayerMovement : MonoBehaviour
     }
         private void MakeWaterball()
     {
+        if (playerInventory.currentMagic > 0)
+        {
             Vector2 temp = new Vector2(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
             Waterball waterball = Instantiate(peluru, transform.position, Quaternion.identity).GetComponent<Waterball>();
             waterball.Setup(temp, ChooseWaterballDirection());
+            playerInventory.ReduceMagic(waterball.magicCost);
+            reduceMagic.Raise();
+        }
     }
 
         Vector3 ChooseWaterballDirection()

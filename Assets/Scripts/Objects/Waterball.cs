@@ -8,6 +8,7 @@ public class Waterball : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float lifetime;
     private float lifetimeCounter;
+    public float magicCost;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +38,4 @@ public class Waterball : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }
