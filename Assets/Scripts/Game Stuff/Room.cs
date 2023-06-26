@@ -24,6 +24,10 @@ public class Room : MonoBehaviour
             virtualCamera.SetActive(true);
         }
     }
+    public void OnDisable()
+    {
+        virtualCamera.SetActive(false);
+    }
 
     public virtual void OnTriggerExit2D(Collider2D other)
     {
