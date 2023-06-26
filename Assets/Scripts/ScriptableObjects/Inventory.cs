@@ -21,9 +21,11 @@ public class Inventory : ScriptableObject {
     {
         currentMagic -= magicCost;
     }
-
+    
     public bool CheckForItem(Item item)
     { 
+        // Apakah memiliki itemnya? jika iya = player memiliki akses untuk fungsi item
+        // Jika tidak  = player tidak memiliki akses untuk fungsi item
         if(items.Contains(item))
         {
             return true;

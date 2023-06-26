@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df6cb07beba4a44ab76d1875895bd40, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: bf447ac1c59fa794fbec901781da16f7, type: 3}
+  m_Name: Watergun Chest
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 0}
-  items:
-  - {fileID: 11400000, guid: 2d830143f5d20594c874770983402f2a, type: 2}
-  numberOfKeys: 2
-  coins: 5
-  maxMagic: 10
-  currentMagic: 9
+  initialValue: 0
+  RuntimeValue: 0

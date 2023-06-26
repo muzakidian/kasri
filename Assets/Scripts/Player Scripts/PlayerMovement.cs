@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Peluru")]
     public GameObject peluru;
+    public Item watergun;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,10 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack
            && currentState != PlayerState.stagger)
         {
+            if (playerInventory.CheckForItem(watergun))
+            {
                 StartCoroutine(SecondAttackCo());
+            }
         }
     }
 

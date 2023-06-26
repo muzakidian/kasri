@@ -19,6 +19,7 @@ public class Waterball : MonoBehaviour
     private void Update()
     {
         lifetimeCounter -= Time.deltaTime;
+        // Peluru akan otomatis menghilang dalam periode waktu input Lifetime
         if(lifetimeCounter <= 0)
         {
             Destroy(this.gameObject);
@@ -27,12 +28,14 @@ public class Waterball : MonoBehaviour
 
     public void Setup(Vector2 velocity, Vector3  direction)
     {
+        // Fungsi agar peluru ditembakkan sesuai arah (tidak mencong)
         myRigidbody.velocity = velocity.normalized * speed;
         transform.rotation = Quaternion.Euler(direction);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        // Peluru akan otomatis menghilang jika collide dengan Enemy
         if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
