@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 201901402}
   - component: {fileID: 201901401}
   - component: {fileID: 201901400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room 1 (Key Door)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8904,7 +8904,7 @@ GameObject:
   - component: {fileID: 811420358}
   - component: {fileID: 811420360}
   - component: {fileID: 811420361}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room 4 (Enemy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20199,7 +20199,7 @@ GameObject:
   - component: {fileID: 1914798924}
   - component: {fileID: 1914798923}
   - component: {fileID: 1914798922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21778,7 +21778,7 @@ GameObject:
   - component: {fileID: 1958811107}
   - component: {fileID: 1958811109}
   - component: {fileID: 1958811110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room 2 (Switch Door)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

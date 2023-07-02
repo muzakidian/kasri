@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -11567,10 +11567,8 @@ TextureImporter:
       outdoors_349: 1503152829
       outdoors_361: -952030915
       outdoors_168: 1289569498
-      outdoors_536: -1556579074
       outdoors_399: 1833347216
       outdoors_24: -279480211
-      outdoors_542: -490522891
       outdoors_80: -2061720728
       outdoors_192: -1051924748
       outdoors_317: 39483163
@@ -11625,18 +11623,18 @@ TextureImporter:
       outdoors_194: -2099281257
       outdoors_291: 331669512
       outdoors_437: -729700910
+      outdoors_514: -1993600001
       outdoors_264: -1792803344
-      outdoors_323: -1136804844
       outdoors_200: -2016344554
+      outdoors_323: -1136804844
       outdoors_375: -2034742883
+      outdoors_412: 2106094612
       outdoors_229: -1668672975
       outdoors_5: -778497950
       outdoors_134: 1333229947
       outdoors_455: 939415476
-      outdoors_412: 2106094612
       outdoors_313: -773218615
       outdoors_45: -304984138
-      outdoors_514: -1993600001
       outdoors_409: -843864542
       outdoors_207: -1556113322
       outdoors_470: -388885732
@@ -11721,24 +11719,24 @@ TextureImporter:
       outdoors_491: 1305386067
       outdoors_518: 494212860
       outdoors_246: -18321465
-      outdoors_38: 1349762410
-      outdoors_336: -1190555610
       outdoors_390: -2095828145
+      outdoors_38: 1349762410
+      outdoors_510: 2046139378
+      outdoors_336: -1190555610
       outdoors_206: -1482751081
-      outdoors_222: 1224173743
       outdoors_513: -362985516
       outdoors_4: 1008783107
       outdoors_395: 859794439
-      outdoors_510: 2046139378
-      outdoors_371: -761787354
+      outdoors_222: 1224173743
       outdoors_530: 104504909
       outdoors_446: -1864352032
       outdoors_74: 28991082
       outdoors_270: -709403913
+      outdoors_371: -761787354
       outdoors_48: -134748089
       outdoors_173: 298622864
-      outdoors_251: -2030712174
       outdoors_54: -397035661
+      outdoors_251: -2030712174
       outdoors_461: 2025171698
       outdoors_519: -556014963
       outdoors_322: -294539663
@@ -11841,20 +11839,20 @@ TextureImporter:
       outdoors_541: 1382702446
       outdoors_310: 323356519
       outdoors_350: -1046704942
+      outdoors_351: 216965032
       outdoors_236: 1774387856
       outdoors_122: -1857396904
-      outdoors_351: 216965032
-      outdoors_456: -631056259
       outdoors_475: 722718798
-      outdoors_377: 876168752
+      outdoors_456: -631056259
       outdoors_540: -1401098109
+      outdoors_377: 876168752
       outdoors_202: -513875296
       outdoors_83: 329500615
       outdoors_67: -1620157928
-      outdoors_211: 1599034842
-      outdoors_18: 978016572
       outdoors_267: -1346249518
+      outdoors_18: 978016572
       outdoors_387: 1276378266
+      outdoors_211: 1599034842
       outdoors_7: -1468569904
       outdoors_502: -1339906564
       outdoors_95: -1029237733
@@ -11881,14 +11879,14 @@ TextureImporter:
       outdoors_384: -502878770
       outdoors_97: -1822712892
       outdoors_184: 1550406250
+      outdoors_309: 1185527445
       outdoors_115: -487889791
       outdoors_8: 920103026
-      outdoors_309: 1185527445
       outdoors_144: -556035191
-      outdoors_175: -1114503938
       outdoors_254: 467181311
       outdoors_420: -740922214
       outdoors_473: 236169143
+      outdoors_175: -1114503938
       outdoors_363: 2021827722
       outdoors_3: -1160235015
       outdoors_293: 2129954676
@@ -12094,11 +12092,13 @@ TextureImporter:
       outdoors_364: 2060896414
       outdoors_46: 334498091
       outdoors_292: -1306894825
+      outdoors_536: -1556579074
+      outdoors_542: -490522891
       outdoors_21: 1594559359
       outdoors_174: -1380351277
-      outdoors_471: -277403637
       outdoors_156: -797000284
       outdoors_262: 621524552
+      outdoors_471: -277403637
       outdoors_148: -1363315701
       outdoors_242: 755717487
       outdoors_345: 479646039
