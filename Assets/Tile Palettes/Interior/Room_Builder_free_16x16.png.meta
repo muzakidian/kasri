@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -5266,8 +5266,8 @@ TextureImporter:
       Room_Builder_free_16x16_85: 1403504490
       Room_Builder_free_16x16_107: 599814844
       Room_Builder_free_16x16_212: 167220397
-      Room_Builder_free_16x16_31: -2138946695
       Room_Builder_free_16x16_176: 681301718
+      Room_Builder_free_16x16_31: -2138946695
       Room_Builder_free_16x16_60: 1874148722
       Room_Builder_free_16x16_152: 792141200
       Room_Builder_free_16x16_52: 1139947855
@@ -5350,8 +5350,8 @@ TextureImporter:
       Room_Builder_free_16x16_55: 1205104866
       Room_Builder_free_16x16_110: -1803153659
       Room_Builder_free_16x16_164: -1893217216
-      Room_Builder_free_16x16_146: -749259439
       Room_Builder_free_16x16_132: 1485262701
+      Room_Builder_free_16x16_146: -749259439
       Room_Builder_free_16x16_134: -978944420
       Room_Builder_free_16x16_147: -2004042616
       Room_Builder_free_16x16_224: -1376332124
@@ -5374,21 +5374,21 @@ TextureImporter:
       Room_Builder_free_16x16_99: -1167235165
       Room_Builder_free_16x16_20: -839632479
       Room_Builder_free_16x16_216: 609064830
-      Room_Builder_free_16x16_166: 1720663118
       Room_Builder_free_16x16_238: 1714323463
       Room_Builder_free_16x16_157: -1487243231
       Room_Builder_free_16x16_226: -1330116667
       Room_Builder_free_16x16_124: -1328213241
-      Room_Builder_free_16x16_140: 2139563023
+      Room_Builder_free_16x16_211: -1022172004
       Room_Builder_free_16x16_214: 24927231
       Room_Builder_free_16x16_71: 240712776
+      Room_Builder_free_16x16_140: 2139563023
       Room_Builder_free_16x16_169: -1910349356
-      Room_Builder_free_16x16_232: -1111482397
-      Room_Builder_free_16x16_211: -1022172004
       Room_Builder_free_16x16_158: 1367400909
       Room_Builder_free_16x16_40: -422445336
+      Room_Builder_free_16x16_166: 1720663118
       Room_Builder_free_16x16_22: 2020172695
       Room_Builder_free_16x16_116: 2119693309
+      Room_Builder_free_16x16_232: -1111482397
       Room_Builder_free_16x16_96: 935389565
       Room_Builder_free_16x16_44: -797729264
       Room_Builder_free_16x16_236: 1896250363
