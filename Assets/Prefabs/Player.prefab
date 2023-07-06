@@ -550,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 8664747687398912466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -36.62, y: 21.064, z: 0}
-  m_LocalScale: {x: 0.8058368, y: 0.8058368, z: 0.8058368}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4332552541144023460}
@@ -700,6 +700,15 @@ MonoBehaviour:
   startingPosition: {fileID: 11400000, guid: 74b0bf196fba6bc43a45de2f95091246, type: 2}
   playerInventory: {fileID: 11400000, guid: 2c7b2acb45372674db45d6f6ea0db8ef, type: 2}
   receivedItemSprite: {fileID: 4332552540757835543}
+  reduceMagic: {fileID: 11400000, guid: 8c435fe5129bc3c41a10f8f13753b258, type: 2}
+  peluru: {fileID: 0}
+  watergun: {fileID: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.5882353}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.07
+  numberOfFlashes: 4
+  triggerCollider: {fileID: 710845125048957020}
+  mySprite: {fileID: 7487910809821007821}
 --- !u!61 &710845125048957020
 BoxCollider2D:
   m_ObjectHideFlags: 0

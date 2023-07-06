@@ -72,3 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: desa
+  playerPosition: {x: 0, y: 0}
+  playerStorage: {fileID: 0}
+  fadeInPanel: {fileID: 2736698286627814896, guid: 67f0c804a8d7adb4286528053717c836, type: 3}
+  fadeOutPanel: {fileID: 6400615808679542114, guid: 810922dacb131e140acf0aaf23d3540c, type: 3}
+  fadeWait: 0.33

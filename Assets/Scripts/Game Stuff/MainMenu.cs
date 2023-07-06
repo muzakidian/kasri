@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("kota");
+        SceneManager.LoadScene("rumah");
     }
 
     public void QuitToDesktop()

@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: a096e30b08aa61d428cbed70ef716eb1
   - enabled: 1
-    path: Assets/Scenes/kota.unity
-    guid: 4018c699893734d4bafd865fa5c51ae8
-  - enabled: 1
     path: Assets/Scenes/rumah.unity
     guid: 8a5e1f5e29c3b804b9e9b7c44e48bd26
   - enabled: 1
     path: Assets/Scenes/desa.unity
     guid: 25ce8c267d05ff64795ed14a0a70a183
+  - enabled: 1
+    path: Assets/Scenes/kota.unity
+    guid: 4018c699893734d4bafd865fa5c51ae8
+  - enabled: 1
+    path: Assets/Scenes/dungeon.unity
+    guid: 10705308bde47f6429a5035a0895388b
   m_configObjects: {}
