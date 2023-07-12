@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/kota.unity
     guid: 4018c699893734d4bafd865fa5c51ae8
   - enabled: 1
-    path: Assets/Scenes/dungeon.unity
+    path: Assets/Scenes/dungeon test.unity
     guid: 10705308bde47f6429a5035a0895388b
   m_configObjects: {}

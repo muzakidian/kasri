@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d06e3a68e5fca845823cc583a832355, type: 3}
-  m_Name: Watergun
+  m_Script: {fileID: 11500000, guid: 453493a53a7ef0f44b2801da33e89ed1, type: 3}
+  m_Name: Enemy Deactivate Room 2
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 80799121be7d68e47ac01db0164083a9, type: 3}
-  itemName: Watergun
-  itemDescription: Pistol air! Coba tekan M untuk menembak
-  isKey: 0
+  listeners: []

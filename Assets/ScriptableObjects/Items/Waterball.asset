@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Waterball
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: e842d59c50fd88e4f87650309ddc8ae7, type: 3}
+  itemName: Waterball
   itemDescription: bola air!
   isKey: 0

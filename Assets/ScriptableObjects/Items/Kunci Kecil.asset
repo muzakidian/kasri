@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Kunci Kecil
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 783317628, guid: ab528006073ef1245bb6bbbd8fe0b00c, type: 3}
+  itemName: Chest
   itemDescription: Ini adalah kunci kecil, mungkin ada pintu di sekitar sini?
   isKey: 1

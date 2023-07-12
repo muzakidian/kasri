@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330662967638399643}
   - component: {fileID: 6330662967638399641}
-  - component: {fileID: 6330662967638399642}
+  - component: {fileID: 6768236664024203111}
   m_Layer: 0
   m_Name: down hit box
   m_TagString: Untagged
@@ -62,7 +62,7 @@ PolygonCollider2D:
       - {x: -0.5019417, y: -0.51677513}
       - {x: -0.4139328, y: -0.910429}
       - {x: 0.61676025, y: -0.96838}
---- !u!114 &6330662967638399642
+--- !u!114 &6768236664024203111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,12 +71,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6330662967638399644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ceaabf76c8fc4f5099ea15790cbe622, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad0c1d1fb0fcde4fa9a264b9c34de04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 2
+  damage: 1
 --- !u!1 &6330662968589034822
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330662968589034821}
   - component: {fileID: 6330662968589034819}
-  - component: {fileID: 6330662968589034820}
+  - component: {fileID: 1641250228265755931}
   m_Layer: 0
   m_Name: left hit box
   m_TagString: Untagged
@@ -139,7 +139,7 @@ PolygonCollider2D:
       - {x: -0.77721024, y: 0.2510662}
       - {x: -0.61676025, y: -0.5772152}
       - {x: -0.31044388, y: -0.28746414}
---- !u!114 &6330662968589034820
+--- !u!114 &1641250228265755931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,12 +148,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6330662968589034822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ceaabf76c8fc4f5099ea15790cbe622, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad0c1d1fb0fcde4fa9a264b9c34de04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 2
+  damage: 1
 --- !u!1 &6330662968676375490
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330662968676375489}
   - component: {fileID: 6330662968676375551}
-  - component: {fileID: 6330662968676375488}
+  - component: {fileID: 1396891345783709026}
   m_Layer: 0
   m_Name: up hit box
   m_TagString: Untagged
@@ -216,7 +216,7 @@ PolygonCollider2D:
       - {x: -0.48745728, y: 0.54081726}
       - {x: -0.4139328, y: 0.04575157}
       - {x: 0.5732994, y: 0.03126335}
---- !u!114 &6330662968676375488
+--- !u!114 &1396891345783709026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,12 +225,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6330662968676375490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ceaabf76c8fc4f5099ea15790cbe622, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad0c1d1fb0fcde4fa9a264b9c34de04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 2
+  damage: 1
 --- !u!1 &6330662968935901955
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 6330662968935902012}
   m_Layer: 0
   m_Name: Ogre
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 60751345
+  m_SortingLayerID: 2025282673
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5731c6cd4df974aef8337a5175e5fc58, type: 3}
@@ -417,7 +417,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6330662968935902012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,25 +426,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6330662968935901955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2cf43fdb2bb64dfe8073857bcd7c702, type: 3}
+  m_Script: {fileID: 11500000, guid: f642cf6c4cbf6b64fa3efa289aa52be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: {fileID: 11400000, guid: 31115a927760445ae8df614cd4b9a11b, type: 2}
+  maxHealth: {fileID: 11400000, guid: 4ad35627dadd200499e2dab5e0306d4f, type: 2}
   health: 0
-  enemyName: ogre
+  enemyName: Dajal
   baseAttack: 4
   moveSpeed: 1
-  homePosition: {x: 41, y: -17}
-  deathEffect: {fileID: 1198431140947087119, guid: d6f2eadd9d5d74926a0275f684319914,
-    type: 3}
-  thisLoot: {fileID: 11400000, guid: eef027b8e593d4b5c8ceeedfcd11c61b, type: 2}
-  roomSignal: {fileID: 11400000, guid: 882c1e12fbcb849a4bfc8ee4d4562342, type: 2}
-  myRigidbody: {fileID: 6330662968935902015}
+  homePosition: {x: 0, y: 0}
+  deathEffect: {fileID: 1198431140947087119, guid: ec01c22af36b0ef439bf933046628c0f, type: 3}
+  thisLoot: {fileID: 11400000, guid: efe807949a2c10d4a95315dce3e13845, type: 2}
+  roomSignal: {fileID: 0}
+  myRigidbody: {fileID: 0}
   target: {fileID: 0}
-  chaseRadius: 5
-  attackRadius: 0.9
-  anim: {fileID: 6330662968935901954}
+  chaseRadius: 100
+  attackRadius: 1
+  anim: {fileID: 0}
 --- !u!1 &6330662969697613928
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330662969697613927}
   - component: {fileID: 6330662969697613925}
-  - component: {fileID: 6330662969697613926}
+  - component: {fileID: 1054605153273201463}
   m_Layer: 0
   m_Name: right hit box
   m_TagString: Untagged
@@ -508,7 +506,7 @@ PolygonCollider2D:
       - {x: 0.46871948, y: 0.36696815}
       - {x: 0.45532227, y: -0.47580147}
       - {x: 0.92100143, y: -0.53375244}
---- !u!114 &6330662969697613926
+--- !u!114 &1054605153273201463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -517,9 +515,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6330662969697613928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ceaabf76c8fc4f5099ea15790cbe622, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad0c1d1fb0fcde4fa9a264b9c34de04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 2
+  damage: 1

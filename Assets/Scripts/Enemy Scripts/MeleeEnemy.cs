@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MeleeEnemy : Slimepah
 {
     // Start is called before the first frame update
+    
     void Start()
     {
-        
+        currentState = EnemyState.idle;
+        myRigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        // Enemy mengejar objek dengan tag player
+        target = GameObject.FindWithTag("Player").transform;
+        anim.SetBool("Walking", true);
     }
 
     // Update is called once per frame

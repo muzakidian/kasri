@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject  {
 
     public Sprite itemSprite;
+    public string itemName;
     public string itemDescription;
     public bool isKey;
 

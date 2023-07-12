@@ -17206,6 +17206,17 @@ Transform:
   m_Father: {fileID: 161359815}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397372102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1034519967195652132, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
+  m_PrefabInstance: {fileID: 939802809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1417752633
 GameObject:
   m_ObjectHideFlags: 0
@@ -23062,6 +23073,7 @@ MonoBehaviour:
   raiseItem: {fileID: 11400000, guid: ac0bbb9817e04d047a302b515a0b7d6f, type: 2}
   dialogBox: {fileID: 1580091688}
   dialogText: {fileID: 337794704}
+  nameText: {fileID: 0}
 --- !u!1 &753965464736895528
 GameObject:
   m_ObjectHideFlags: 0
@@ -25179,6 +25191,7 @@ MonoBehaviour:
   raiseItem: {fileID: 11400000, guid: b361fe3ce13eee44fa78ea5dc01bff3f, type: 2}
   dialogBox: {fileID: 340029148}
   dialogText: {fileID: 1053091869}
+  nameText: {fileID: 1397372102}
 --- !u!4 &6636648605630830590
 Transform:
   m_ObjectHideFlags: 0

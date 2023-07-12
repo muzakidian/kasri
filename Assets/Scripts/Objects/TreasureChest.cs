@@ -16,6 +16,8 @@ public class TreasureChest : Interactable
     public Sinyal raiseItem;
     public GameObject dialogBox;
     public Text dialogText;
+    public Text nameText;
+
 
     [Header("Animation")]
     private Animator anim;
@@ -55,6 +57,7 @@ public class TreasureChest : Interactable
         dialogBox.SetActive(true);
         // dialog text = contents text
         dialogText.text = contents.itemDescription;
+        nameText.text = contents.itemName;
         // menambahkan content (item) ke inventory
         playerInventory.AddItem(contents);
         playerInventory.currentItem = contents;

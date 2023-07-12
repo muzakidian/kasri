@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public Enemy[] enemies;
+    // public Enemy[] enemies;
+    public List<Enemy> enemies = new List<Enemy>();
+
+
     public pot[] pots;
     public GameObject virtualCamera;
 
@@ -13,7 +16,7 @@ public class Room : MonoBehaviour
         if(other.CompareTag("Player") && !other.isTrigger)
         {
             //Activate all enemies and pots
-            for(int i = 0; i < enemies.Length; i ++)
+            for(int i = 0; i < enemies.Count; i ++)
             {
                 ChangeActivation(enemies[i], true);
             }
@@ -34,7 +37,7 @@ public class Room : MonoBehaviour
         if (other.CompareTag("Player") && !other.isTrigger)
         {
             //Deactivate all enemies and pots
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemies.Count; i++)
             {
                 ChangeActivation(enemies[i], false);
             }

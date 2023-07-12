@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour {
     public EnemyState currentState;
 
     [Header("Enemy Stats")]
+    public DungeonEnemyRoom dungeonRoom;
     public FloatValue maxHealth;
     public float health;
     public string enemyName;
@@ -46,15 +47,17 @@ public class Enemy : MonoBehaviour {
     private void TakeDamage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        if(health <= 0 && dungeonRoom != null)
         {
             DeathEffect();
             MakeLoot();
             if (roomSignal != null)
             {
                 roomSignal.Raise();
-            }
+            }          
             this.gameObject.SetActive(false);
+            dungeonRoom.ActivateEnemiesToSpawn();
+            dungeonRoom.DestroyEnemy(this.gameObject);
         }
     }
     private void MakeLoot()

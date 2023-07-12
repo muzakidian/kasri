@@ -7,6 +7,8 @@ public class Sign : Interactable {
 
     public GameObject dialogBox;
     public Text dialogText;
+    public Text nameText;
+    public string nama;
     public string dialog;
 
 	// Use this for initialization
@@ -24,6 +26,7 @@ public class Sign : Interactable {
             }else{
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
+                nameText.text = nama;
             }
         }
 	}
