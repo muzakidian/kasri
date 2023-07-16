@@ -37,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D triggerCollider;
     public SpriteRenderer mySprite;
 
+    // Game Over
+    private bool isDead;
+    public GameManagerScript gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -169,14 +173,16 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.RuntimeValue -= damage;
+        currentHealth.RuntimeValue -= damage; 
+        // Debug.Log(currentHealth.RuntimeValue);
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue > 0)
         {
-
             StartCoroutine(KnockCo(knockTime));
         }else{
+            isDead = true;
             this.gameObject.SetActive(false);
+            gameManager.gameOver();
         }
     }
     

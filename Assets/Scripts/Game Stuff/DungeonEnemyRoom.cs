@@ -34,6 +34,7 @@ public class DungeonEnemyRoom : DungeonRoom
     private UCB1Algorithm ucb1Algorithm;
     // Dungeon Variable
     public Door[] doors;
+    public GameManagerScript gameManager;
     private void Start()
     {
         // ResetUCB1Values();
