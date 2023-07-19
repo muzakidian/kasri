@@ -14,7 +14,7 @@ public class MeleeEnemy : Slimepah
         anim = GetComponent<Animator>();
         // Enemy mengejar objek dengan tag player
         target = GameObject.FindWithTag("Player").transform;
-        anim.SetBool("Walking", true);
+        // anim.SetBool("Walking", true);
     }
 
     // Update is called once per frame

@@ -441,9 +441,9 @@ public class DungeonEnemyRoom : DungeonRoom
     public void ResetUCB1Values()
     {
     // Menghapus data SavedGame
-    // PlayerPrefs.DeleteKey("GameData");
-    // PlayerPrefs.DeleteKey("NextDifficulty");
-    // PlayerPrefs.Save();
+    PlayerPrefs.DeleteKey("GameData");
+    PlayerPrefs.DeleteKey("NextDifficulty");
+    PlayerPrefs.Save();
 
     // Reset nilai cEasy, cNormal, cHard, xEasy, xNormal, dan xHard
     cEasy = 0;

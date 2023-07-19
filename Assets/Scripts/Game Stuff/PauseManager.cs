@@ -8,12 +8,14 @@ public class PauseManager : MonoBehaviour
 
     private bool isPaused;
     public GameObject pausePanel;
+    public GameManagerScript gameManager;
     public bool usingPausePanel;
     public string mainMenu;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManagerScript>();
         isPaused = false;
         pausePanel.SetActive(false);
         usingPausePanel = false;
@@ -22,11 +24,11 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause"))
         {
             ChangePause();
         }
-        
+
     }
 
     public void ChangePause()
@@ -36,7 +38,7 @@ public class PauseManager : MonoBehaviour
         {
             pausePanel.SetActive(true);
             Time.timeScale = 0f;
-            usingPausePanel = true;;
+            usingPausePanel = true; ;
         }
         else
         {
@@ -54,7 +56,7 @@ public class PauseManager : MonoBehaviour
     public void SwitchPanels()
     {
         usingPausePanel = !usingPausePanel;
-        if(usingPausePanel)
+        if (usingPausePanel)
         {
             pausePanel.SetActive(true);
         }
@@ -62,6 +64,13 @@ public class PauseManager : MonoBehaviour
         {
             pausePanel.SetActive(false);
         }
+    }
+    public void RestartGame()
+    {
+        // Kembalikan Time.timeScale ke 1 sebelum me-restart
+        Time.timeScale = 1f;
+        // Panggil fungsi Restart() dari GameManagerScript
+        gameManager.Restart();
     }
 
 }

@@ -9,7 +9,7 @@ public class BoundedNPC : Sign
     public float speed;
     private Rigidbody2D myRigidbody;
     private Animator anim;
-    public Collider2D bounds;
+    // public Collider2D bounds;
     private bool isMoving;
     public float minMoveTime;
     public float maxMoveTime;
@@ -30,9 +30,9 @@ public class BoundedNPC : Sign
     }
 
     // Update is called once per frame
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         if (isMoving)
         {
             moveTimeSeconds -= Time.deltaTime;
@@ -58,10 +58,10 @@ public class BoundedNPC : Sign
         }
     }
 
-    // public override void Update()
+    // public override void FixedUpdate()
     // {
 
-    //     base.Update();
+    //     base.FixedUpdate();
     //     if (isMoving)
     //     {
     //         moveTimeSeconds -= Time.deltaTime;
@@ -112,14 +112,14 @@ public class BoundedNPC : Sign
     private void Move()
     {
         Vector3 temp = myTransform.position + directionVector * speed * Time.deltaTime;
-        if (bounds.bounds.Contains(temp))
-        {
-            myRigidbody.MovePosition(temp);
-        }
-        else
-        {
-            ChangeDirection();
-        }
+        // if (bounds.bounds.Contains(temp))
+        // {
+        //     myRigidbody.MovePosition(temp);
+        // }
+        // else
+        // {
+        //     ChangeDirection();
+        // }
     }
 
     void ChangeDirection()

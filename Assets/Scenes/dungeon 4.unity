@@ -3650,6 +3650,7 @@ MonoBehaviour:
   difficulty: 0
   doors:
   - {fileID: 6860123824462012518}
+  gameManager: {fileID: 0}
 --- !u!114 &811420361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6710,7 +6711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e80da28b78d484fa4b9e3188211142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: desa
+  sceneToLoad: dungeon 5
   playerPosition: {x: -32, y: 54}
   playerStorage: {fileID: 11400000, guid: 95499804c788f5749891500815433113, type: 2}
   fadeInPanel: {fileID: 2736698286627814896, guid: 67f0c804a8d7adb4286528053717c836, type: 3}

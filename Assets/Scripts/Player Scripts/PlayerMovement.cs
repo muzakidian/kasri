@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer mySprite;
 
     // Game Over
-    private bool isDead;
+    // private bool isDead;
     public GameManagerScript gameManager;
 
     // Start is called before the first frame update
@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(KnockCo(knockTime));
         }else{
-            isDead = true;
+            // isDead = true;
             this.gameObject.SetActive(false);
             gameManager.gameOver();
         }

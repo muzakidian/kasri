@@ -572,17 +572,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000039339, y: -0}
   m_SizeDelta: {x: 650.2, y: 95.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &403975361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2986509551267130944, guid: 6ed4c90674cac434bbcc97b92b91ef8d, type: 3}
-  m_PrefabInstance: {fileID: 2986509550863155841}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd89af4d98ad8445938a1d40c27607c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &420087489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,6 +3717,7 @@ MonoBehaviour:
   difficulty: 0
   doors:
   - {fileID: 6860123824462012518}
+  gameManager: {fileID: 0}
 --- !u!114 &811420361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6159,7 +6149,7 @@ PrefabInstance:
     - target: {fileID: 2408086688339279190, guid: b13a2c55a1a68554398bbde521899dac, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 403975361}
+      objectReference: {fileID: 0}
     - target: {fileID: 2408086688339279190, guid: b13a2c55a1a68554398bbde521899dac, type: 3}
       propertyPath: reduceMagic
       value: 
