@@ -17,7 +17,7 @@ public class Sign : Interactable {
 	}
 	
 	// Update is called once per frame
-	public virtual void FixedUpdate () {
+	public virtual void Update () {
         if(Input.GetButtonDown("interact") && playerInRange)
         {
             if(dialogBox.activeInHierarchy)

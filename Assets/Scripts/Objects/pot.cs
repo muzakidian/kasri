@@ -21,7 +21,7 @@ public class pot : MonoBehaviour
 
     private bool isSmashed = false;
 
-    public void Smash()
+    public virtual void Smash()
     {
         anim.SetBool("smash", true);
         StartCoroutine(breakCo());

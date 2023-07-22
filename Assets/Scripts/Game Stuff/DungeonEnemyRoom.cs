@@ -35,10 +35,21 @@ public class DungeonEnemyRoom : DungeonRoom
     // Dungeon Variable
     public Door[] doors;
     public GameManagerScript gameManager;
+    private PlayerMovement playerMovement;
+    private string currentScene; // Menyimpan nama scene saat ini
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene().name;
+        playerMovement = FindObjectOfType<PlayerMovement>();
         // ResetUCB1Values();
-        LoadGameData();
+        if (!PlayerPrefs.HasKey("GameData"))
+        {
+            ResetUCB1Values();
+        }
+        else
+        {
+        LoadUCB1Data();    
+        }
         GenerateWave();
         ActivateEnemiesToSpawn();
         ucb1Algorithm = new UCB1Algorithm();
@@ -174,6 +185,7 @@ public class DungeonEnemyRoom : DungeonRoom
     }
     public void DungeonCompleted(bool playerWon)
     {
+        GameData gameData = new GameData();
         // Update nilai c dan x sesuai dengan rules dan hasil permainan
         if (playerWon)
         {
@@ -245,10 +257,16 @@ public class DungeonEnemyRoom : DungeonRoom
         // Menentukan tingkat kesulitan berdasarkan skor UCB1
         string currentDifficulty = difficulty.ToString();
         string nextDifficulty = ucb1Algorithm.DetermineNextDifficulty(ucb1ScoreEasy, ucb1ScoreNormal, ucb1ScoreHard, currentDifficulty);
-        Debug.Log("Current Difficulty: "+currentDifficulty);
+        Debug.Log("Current Difficulty: " + currentDifficulty);
 
-        // Menyimpan data hasil permainan untuk scene selanjutnya
-        SaveGameData(nextDifficulty);
+        // Menyimpan posisi player dan scene terakhir
+        // PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
+        // gameData.playerPosition = playerMovement.transform.position;
+        // gameData.lastScene = SceneManager.GetActiveScene().name;
+
+        // Menyimpan data permainan
+        SaveUCB1Data(nextDifficulty);
+        Debug.Log("Otomatis ke save lur");
 
         // Simpan nilai nextDifficulty sebagai PlayerPrefs
         PlayerPrefs.SetString("NextDifficulty", nextDifficulty);
@@ -259,11 +277,13 @@ public class DungeonEnemyRoom : DungeonRoom
         sceneTransition.FadeCo();
     }
 
-    private void SaveGameData(string nextDifficulty)
+    public void SaveUCB1Data(string nextDifficulty)
     {
         // Membuat objek untuk menyimpan data permainan
         GameData gameData = new GameData();
-
+        // Menyimpan posisi dan scene terakhir player
+        // gameData.playerPosition = playerMovement.transform.position;
+        gameData.lastScene = SceneManager.GetActiveScene().name;
         // Menyimpan nilai tingkat kesulitan selanjutnya
         gameData.nextDifficulty = nextDifficulty;
 
@@ -275,30 +295,15 @@ public class DungeonEnemyRoom : DungeonRoom
         gameData.cHard = cHard;
         gameData.xHard = xHard;
 
-        // if (difficulty == Difficulty.Easy)
-        // {
-        //     gameData.cEasy = cEasy;
-        //     gameData.xEasy = xEasy;
-        // }
-        // else if (difficulty == Difficulty.Normal)
-        // {
-        //     gameData.cNormal = cNormal;
-        //     gameData.xNormal = xNormal;
-        // }
-        // else if (difficulty == Difficulty.Hard)
-        // {
-        //     gameData.cHard = cHard;
-        //     gameData.xHard = xHard;
-        // }
 
-        // Mengubah objek GameData menjadi JSON
+        // Mengubah objek gameData  menjadi JSON
         string jsonData = JsonUtility.ToJson(gameData);
 
         // Menyimpan data JSON ke penyimpanan (misalnya PlayerPrefs)
         PlayerPrefs.SetString("GameData", jsonData);
         PlayerPrefs.Save();
     }
-    private void LoadGameData()
+    private void LoadUCB1Data()
     {
         string jsonData = PlayerPrefs.GetString("GameData");
         GameData gameData = JsonUtility.FromJson<GameData>(jsonData);
@@ -307,19 +312,6 @@ public class DungeonEnemyRoom : DungeonRoom
         cEasy = gameData.cEasy;
         cNormal = gameData.cNormal;
         cHard = gameData.cHard;
-
-        // if (difficulty == Difficulty.Easy)
-        // {
-        //     cEasy = gameData.cEasy;
-        // }
-        // else if (difficulty == Difficulty.Normal)
-        // {
-        //     cNormal = gameData.cNormal;
-        // }
-        // else if (difficulty == Difficulty.Hard)
-        // {
-        //     cHard = gameData.cHard;
-        // }
 
         string nextDifficulty = PlayerPrefs.GetString("NextDifficulty");
         if (nextDifficulty == "Easy")
@@ -336,6 +328,55 @@ public class DungeonEnemyRoom : DungeonRoom
         Debug.Log("cHard: " + gameData.cHard);
         Debug.Log("xHard: " + gameData.xHard);
     }
+    // private void SaveGameData(string nextDifficulty)
+    // {
+    //     // Membuat objek untuk menyimpan data permainan
+    //     GameData gameData = new GameData();
+
+    //     // Menyimpan nilai tingkat kesulitan selanjutnya
+    //     gameData.nextDifficulty = nextDifficulty;
+
+    //     // Menyimpan nilai c dan x
+    //     gameData.cEasy = cEasy;
+    //     gameData.xEasy = xEasy;
+    //     gameData.cNormal = cNormal;
+    //     gameData.xNormal = xNormal;
+    //     gameData.cHard = cHard;
+    //     gameData.xHard = xHard;
+
+
+    //     // Mengubah objek GameData menjadi JSON
+    //     string jsonData = JsonUtility.ToJson(gameData);
+
+    //     // Menyimpan data JSON ke penyimpanan (misalnya PlayerPrefs)
+    //     PlayerPrefs.SetString("GameData", jsonData);
+    //     PlayerPrefs.Save();
+    // }
+    // private void LoadGameData()
+    // {
+    //     string jsonData = PlayerPrefs.GetString("GameData");
+    //     GameData gameData = JsonUtility.FromJson<GameData>(jsonData);
+
+    //     // Mengisi nilai-nilai cEasy, cNormal, dan cHard dengan nilai yang disimpan sebelumnya
+    //     cEasy = gameData.cEasy;
+    //     cNormal = gameData.cNormal;
+    //     cHard = gameData.cHard;
+
+    //     string nextDifficulty = PlayerPrefs.GetString("NextDifficulty");
+    //     if (nextDifficulty == "Easy")
+    //         difficulty = Difficulty.Easy;
+    //     else if (nextDifficulty == "Normal")
+    //         difficulty = Difficulty.Normal;
+    //     else if (nextDifficulty == "Hard")
+    //         difficulty = Difficulty.Hard;
+    //     Debug.Log("Next Difficulty: " + gameData.nextDifficulty);
+    //     Debug.Log("cEasy: " + gameData.cEasy);
+    //     Debug.Log("xEasy: " + gameData.xEasy);
+    //     Debug.Log("cNormal: " + gameData.cNormal);
+    //     Debug.Log("xNormal: " + gameData.xNormal);
+    //     Debug.Log("cHard: " + gameData.cHard);
+    //     Debug.Log("xHard: " + gameData.xHard);
+    // }
 
     public class UCB1Algorithm
     {
@@ -361,15 +402,6 @@ public class DungeonEnemyRoom : DungeonRoom
             float averageXNormal = totalXNormal / totalGamesNormal;
             float averageXHard = totalXHard / totalGamesHard;
 
-            // Menghitung skor UCB1 untuk setiap tingkat kesulitan
-            // float ucb1ScoreEasy = averageXEasy + Mathf.Sqrt(2f * Mathf.Log(totalGamesEasy + Mathf.Epsilon) / totalCEasy);
-            // float ucb1ScoreNormal = averageXNormal + Mathf.Sqrt(2f * Mathf.Log(totalGamesNormal + Mathf.Epsilon) / totalCNormal);
-            // float ucb1ScoreHard = averageXHard + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCHard);
-
-            // float ucb1ScoreEasy = totalXEasy + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCEasy);
-            // float ucb1ScoreNormal = totalXNormal + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCNormal);
-            // float ucb1ScoreHard = totalXHard + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCHard);
-
             float defaultUCB1Score = 0f; // Nilai default yang dapat disesuaikan sesuai kebutuhan Anda
             float ucb1ScoreEasy = (totalCEasy > 0f) ? (totalXEasy + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCEasy)) : defaultUCB1Score;
             float ucb1ScoreNormal = (totalCNormal > 0f) ? (totalXNormal + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCNormal)) : defaultUCB1Score;
@@ -394,18 +426,6 @@ public class DungeonEnemyRoom : DungeonRoom
 
         public string DetermineNextDifficulty(float ucb1ScoreEasy, float ucb1ScoreNormal, float ucb1ScoreHard, string currentDifficulty)
         {
-            // if (ucb1ScoreEasy > 0.5f)
-            // {
-            //     if (currentDifficulty == "Easy")
-            //         return "Normal";
-            //     else if (currentDifficulty == "Normal")
-            //         return "Hard";
-            // }
-            // else if (ucb1ScoreHard > 0.5f && currentDifficulty == "Hard")
-            // {
-            //     return "Normal";
-            // }
-            // return currentDifficulty;
 
             // Logika baru untuk penentuan tingkat kesulitan
             if (ucb1ScoreEasy > ucb1ScoreNormal && ucb1ScoreEasy > ucb1ScoreHard)
@@ -440,19 +460,26 @@ public class DungeonEnemyRoom : DungeonRoom
     }
     public void ResetUCB1Values()
     {
-    // Menghapus data SavedGame
-    PlayerPrefs.DeleteKey("GameData");
-    PlayerPrefs.DeleteKey("NextDifficulty");
-    PlayerPrefs.Save();
+    if (PlayerPrefs.HasKey("GameData"))
+    {
+        // Menghapus data SavedGame
+        PlayerPrefs.DeleteKey("GameData");
+        PlayerPrefs.DeleteKey("NextDifficulty");
+        PlayerPrefs.Save();
 
-    // Reset nilai cEasy, cNormal, cHard, xEasy, xNormal, dan xHard
-    cEasy = 0;
-    cNormal = 0;
-    cHard = 0;
-    xEasy = 0;
-    xNormal = 0;
-    xHard = 0;
-    Debug.Log("SavedGame telah di-reset.");
+        Debug.Log("SavedGame data has been reset.");
+    }
+    else
+    {
+        // Tidak ada data SavedGame yang tersimpan, tidak perlu menghapusnya
+        Debug.Log("No saved game data found.");
+    }
+        // Reset nilai cEasy, cNormal, cHard, xEasy, xNormal, dan xHard
+        cEasy = 0;
+        cNormal = 0;
+        cHard = 0;
+        difficulty = Difficulty.Easy;
+        Debug.Log("SavedGame telah di-reset.");
     }
 
     // Mengatur pintu dan aktivasi objek ruangan
@@ -528,4 +555,7 @@ public class GameData
     public float xNormal;
     public float cHard;
     public float xHard;
+
+    public Vector3 playerPosition;
+    public string lastScene;
 }

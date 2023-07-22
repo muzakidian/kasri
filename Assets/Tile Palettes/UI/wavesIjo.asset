@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: wavesIjo
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 752375235, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 2070593448, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 1206642631, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: -1728912892, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: -1061567732, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: -434791635, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 111613466, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: -1842343732, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 1873460568, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 2102863932, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: -462552300, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 1426202908, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 1332154887, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  - {fileID: 29604191, guid: 1ad44b60b61b058438042b6cbd65dbdb, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0

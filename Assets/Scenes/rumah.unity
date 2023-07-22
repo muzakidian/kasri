@@ -1914,6 +1914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5552191626246903253, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5552191626342027846, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1932,30 +1936,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
---- !u!114 &267073697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278596211730583402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc981d20755eccf42ac358d236cd6c77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  context: {fileID: 11400000, guid: b94d462a48462cd419dbc4aa460ecbe9, type: 2}
-  playerInRange: 0
-  dialogBox: {fileID: 1619175564}
-  dialogText: {fileID: 446016639}
-  nameText: {fileID: 1395944744}
-  nama: Mama
-  dialog: halooo nak
-  speed: 0
-  minMoveTime: 0
-  maxMoveTime: 0
-  minWaitTime: 0
-  maxWaitTime: 0
 --- !u!114 &446016639 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5552191627078562950, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
@@ -9287,6 +9267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124292652268255084, guid: 3e540815a05ce3f4c8cd32e0404fe41f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 124292652786039553, guid: 3e540815a05ce3f4c8cd32e0404fe41f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9374,6 +9358,10 @@ PrefabInstance:
     - target: {fileID: 124292652786039558, guid: 3e540815a05ce3f4c8cd32e0404fe41f, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 124292652786039558, guid: 3e540815a05ce3f4c8cd32e0404fe41f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e540815a05ce3f4c8cd32e0404fe41f, type: 3}
@@ -9554,7 +9542,7 @@ GameObject:
   - component: {fileID: 2143426817}
   - component: {fileID: 2143426816}
   - component: {fileID: 2143426815}
-  - component: {fileID: 2143426814}
+  - component: {fileID: 2143426820}
   m_Layer: 0
   m_Name: Dad
   m_TagString: Untagged
@@ -9577,30 +9565,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2143426814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143426812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc981d20755eccf42ac358d236cd6c77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  context: {fileID: 11400000, guid: b94d462a48462cd419dbc4aa460ecbe9, type: 2}
-  playerInRange: 0
-  dialogBox: {fileID: 1619175564}
-  dialogText: {fileID: 446016639}
-  nameText: {fileID: 1395944744}
-  nama: Ayah
-  dialog: wassap anakku
-  speed: 0
-  minMoveTime: 0
-  maxMoveTime: 0
-  minWaitTime: 0
-  maxWaitTime: 0
 --- !u!58 &2143426815
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9736,6 +9700,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2143426820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143426812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c46445999359543920b169d9e12c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 11400000, guid: b94d462a48462cd419dbc4aa460ecbe9, type: 2}
+  playerInRange: 0
+  dialogBox: {fileID: 1619175564}
+  dialogText: {fileID: 446016639}
+  nameText: {fileID: 1395944744}
+  nama: Ayah
+  dialog: Kamu bisa mulai dengan berkeliling dan berbicara dengan beberapa penduduk
+    desa. Mereka pasti senang bertemu dengan tetangga baru.
+  dialogues:
+  - Bagaimana kabarmu, Nak? Kamu tampak khawatir.
+  - Kamu tidak perlu khawatir begitu, Nak. Bagaimana kalau kamu mengecek lingkungan
+    sekitar rumah baru kita?
 --- !u!61 &1278596211730583396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9885,7 +9873,7 @@ GameObject:
   - component: {fileID: 1278596211730583401}
   - component: {fileID: 1278596211730583396}
   - component: {fileID: 1278596211730583397}
-  - component: {fileID: 267073697}
+  - component: {fileID: 1278596211730583404}
   m_Layer: 0
   m_Name: Mom
   m_TagString: Untagged
@@ -9908,6 +9896,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278596211730583404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278596211730583402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c46445999359543920b169d9e12c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 11400000, guid: b94d462a48462cd419dbc4aa460ecbe9, type: 2}
+  playerInRange: 0
+  dialogBox: {fileID: 1619175564}
+  dialogText: {fileID: 446016639}
+  nameText: {fileID: 1395944744}
+  nama: Mama
+  dialog: Mama sayang kamu
+  dialogues:
+  - Hai, sayangku... Kamu pasti kaget melihat kondisi lingkungan kota baru kita,
+    ya?
+  - Ayahmu dan aku juga prihatin dengan kondisi lingkungan di sini, Nak. Air sungai
+    yang tercemar itu menyebabkan banyak orang jatuh sakit. Dan, Ibu... Ibu sudah
+    menggunakan air itu untuk memasak dan mencuci.
+  - Kamu tahu, di desa kita dulu, lingkungannya bersih dan indah. Tapi sekarang,
+    di kota ini, mungkin butuh bantuanmu untuk membuatnya menjadi lebih baik.
+  - Kamu anak yang cerdas dan penuh semangat. Ingatlah selalu ajaran guru dan nilai-nilai
+    kebersihan yang sudah kamu pelajari. Kamu bisa menjadi pahlawan kecil untuk lingkungan
+    ini.
 --- !u!1001 &1581214425873359105
 PrefabInstance:
   m_ObjectHideFlags: 0

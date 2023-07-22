@@ -30,9 +30,9 @@ public class BoundedNPC : Sign
     }
 
     // Update is called once per frame
-    public override void FixedUpdate()
+    public override void Update()
     {
-        base.FixedUpdate();
+        base.Update();
         if (isMoving)
         {
             moveTimeSeconds -= Time.deltaTime;

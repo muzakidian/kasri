@@ -72,5 +72,14 @@ public class PauseManager : MonoBehaviour
         // Panggil fungsi Restart() dari GameManagerScript
         gameManager.Restart();
     }
-
+    public void SaveGame()
+    {
+        // Cek apakah ada instance dari DungeonEnemyRoom
+        DungeonEnemyRoom dungeonRoom = FindObjectOfType<DungeonEnemyRoom>();
+        if (dungeonRoom != null)
+        {
+            // Panggil fungsi SaveGameData dari DungeonEnemyRoom
+            dungeonRoom.SaveUCB1Data(PlayerPrefs.GetString("NextDifficulty"));
+        }
+    }
 }
