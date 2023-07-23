@@ -8,6 +8,8 @@ using UnityEngine.Playables;
 public class MainMenu : MonoBehaviour
 {
     public GameObject optionMenuPanel;
+    public GameObject noSavedDataImage;
+    public float warningDisplayDuration = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,16 +40,20 @@ public class MainMenu : MonoBehaviour
 
             // Muat scene terakhir yang disimpan
             SceneManager.LoadScene(gameDataSave.lastScene);
-
-            // Pindahkan player ke posisi terakhir
-            // PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
-            // playerMovement.transform.position = gameDataSave.playerPosition;
+        }
+    else
+    {
+        // Tampilkan gambar yang menunjukkan player belum bisa meload game
+        if (noSavedDataImage != null)
+        {
+            noSavedDataImage.gameObject.SetActive(true);
+            StartCoroutine(HideWarningAfterDelay());
         }
         else
         {
-            // Tidak ada data SavedGame yang tersimpan
-            Debug.Log("No saved game data found.");
+            Debug.LogWarning("NoSavedDataImage not assigned in the inspector.");
         }
+    }
     }
     public void QuitToDesktop()
     {
@@ -74,5 +80,13 @@ public class MainMenu : MonoBehaviour
     public void BackToMenu()
     {
         optionMenuPanel.SetActive(false); // nonaktifkan optionsPanel
+    }
+    private IEnumerator HideWarningAfterDelay()
+    {
+        yield return new WaitForSeconds(warningDisplayDuration);
+        if (noSavedDataImage != null)
+        {
+            noSavedDataImage.gameObject.SetActive(false);
+        }
     }
 }
