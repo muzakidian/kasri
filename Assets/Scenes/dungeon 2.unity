@@ -3645,11 +3645,18 @@ MonoBehaviour:
   - {fileID: 420087490}
   - {fileID: 1705684524}
   spawnIndex: 0
-  waveDuration: 5
+  waveDuration: 20
   spawnedEnemies: []
+  cEasy: 0
+  cNormal: 0
+  cHard: 0
+  xEasy: 0
+  xNormal: 0
+  xHard: 0
   difficulty: 0
   doors:
   - {fileID: 6860123824462012518}
+  gameManager: {fileID: 0}
 --- !u!114 &811420361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4150,6 +4157,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 54699796568026221, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204305820723844394, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
+      propertyPath: dungeonEnemyRoom
+      value: 
+      objectReference: {fileID: 811420360}
     - target: {fileID: 5552191626246903252, guid: 4e23ae8113963ee418fa0acbf3ace45d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5772,7 +5787,7 @@ RectTransform:
   m_Children:
   - {fileID: 337794706}
   m_Father: {fileID: 1787509363}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7023,7 +7038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   dungeonRoom: {fileID: 811420360}
-  maxHealth: {fileID: 11400000, guid: 4ad35627dadd200499e2dab5e0306d4f, type: 2}
+  maxHealth: {fileID: 11400000, guid: d3db5a469f6665840bd6a8ca60943583, type: 2}
   health: 0
   enemyName: Dajal
   baseAttack: 4

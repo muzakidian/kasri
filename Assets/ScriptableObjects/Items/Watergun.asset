@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 21300000, guid: 80799121be7d68e47ac01db0164083a9, type: 3}
   itemName: Watergun
-  itemDescription: Pistol air! Coba tekan M untuk menembak
+  itemDescription: Pistol air! Coba tekan K untuk menembak
   isKey: 0

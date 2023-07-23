@@ -24,13 +24,36 @@ public class DungeonEnemyRoom : DungeonRoom
         Normal,
         Hard
     }
-    private float cEasy;
-    private float cNormal;
-    private float cHard;
-    private float xEasy;
-    private float xNormal;
-    private float xHard;
+    public float cEasy;
+    public float cNormal;
+    public float cHard;
+    public float xEasy;
+    public float xNormal;
+    public float xHard;
     public Difficulty difficulty;
+    //Tambahkan variabel private untuk ucb1ScoreEasy
+    private float ucb1ScoreEasy;
+    private float ucb1ScoreNormal;
+    private float ucb1ScoreHard;
+    private string nextDifficulty;
+
+    //Tambahkan property public untuk mengaksesnya
+    public float Ucb1ScoreEasy
+    {
+        get { return ucb1ScoreEasy; }
+    }
+    public float Ucb1ScoreNormal
+    {
+        get { return ucb1ScoreNormal; }
+    }
+    public float Ucb1ScoreHard
+    {
+        get { return ucb1ScoreHard; }
+    }
+    public string NextDifficulty
+    {
+        get { return nextDifficulty; }
+    }
     private UCB1Algorithm ucb1Algorithm;
     // Dungeon Variable
     public Door[] doors;
@@ -241,9 +264,9 @@ public class DungeonEnemyRoom : DungeonRoom
         }
 
         // Menghitung skor UCB1 untuk tingkat kesulitan selanjutnya
-        float ucb1ScoreEasy = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Easy");
-        float ucb1ScoreNormal = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Normal");
-        float ucb1ScoreHard = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Hard");
+        ucb1ScoreEasy = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Easy");
+        ucb1ScoreNormal = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Normal");
+        ucb1ScoreHard = ucb1Algorithm.CalculateUCB1Score(cEasy, xEasy, cNormal, xNormal, cHard, xHard, "Hard");
         Debug.Log("cEasy: " + cEasy);
         Debug.Log("cNormal: " + cNormal);
         Debug.Log("cHard: " + cHard);
@@ -256,7 +279,7 @@ public class DungeonEnemyRoom : DungeonRoom
 
         // Menentukan tingkat kesulitan berdasarkan skor UCB1
         string currentDifficulty = difficulty.ToString();
-        string nextDifficulty = ucb1Algorithm.DetermineNextDifficulty(ucb1ScoreEasy, ucb1ScoreNormal, ucb1ScoreHard, currentDifficulty);
+        nextDifficulty = ucb1Algorithm.DetermineNextDifficulty(ucb1ScoreEasy, ucb1ScoreNormal, ucb1ScoreHard, currentDifficulty);
         Debug.Log("Current Difficulty: " + currentDifficulty);
 
         // Menyimpan posisi player dan scene terakhir
@@ -328,55 +351,6 @@ public class DungeonEnemyRoom : DungeonRoom
         Debug.Log("cHard: " + gameData.cHard);
         Debug.Log("xHard: " + gameData.xHard);
     }
-    // private void SaveGameData(string nextDifficulty)
-    // {
-    //     // Membuat objek untuk menyimpan data permainan
-    //     GameData gameData = new GameData();
-
-    //     // Menyimpan nilai tingkat kesulitan selanjutnya
-    //     gameData.nextDifficulty = nextDifficulty;
-
-    //     // Menyimpan nilai c dan x
-    //     gameData.cEasy = cEasy;
-    //     gameData.xEasy = xEasy;
-    //     gameData.cNormal = cNormal;
-    //     gameData.xNormal = xNormal;
-    //     gameData.cHard = cHard;
-    //     gameData.xHard = xHard;
-
-
-    //     // Mengubah objek GameData menjadi JSON
-    //     string jsonData = JsonUtility.ToJson(gameData);
-
-    //     // Menyimpan data JSON ke penyimpanan (misalnya PlayerPrefs)
-    //     PlayerPrefs.SetString("GameData", jsonData);
-    //     PlayerPrefs.Save();
-    // }
-    // private void LoadGameData()
-    // {
-    //     string jsonData = PlayerPrefs.GetString("GameData");
-    //     GameData gameData = JsonUtility.FromJson<GameData>(jsonData);
-
-    //     // Mengisi nilai-nilai cEasy, cNormal, dan cHard dengan nilai yang disimpan sebelumnya
-    //     cEasy = gameData.cEasy;
-    //     cNormal = gameData.cNormal;
-    //     cHard = gameData.cHard;
-
-    //     string nextDifficulty = PlayerPrefs.GetString("NextDifficulty");
-    //     if (nextDifficulty == "Easy")
-    //         difficulty = Difficulty.Easy;
-    //     else if (nextDifficulty == "Normal")
-    //         difficulty = Difficulty.Normal;
-    //     else if (nextDifficulty == "Hard")
-    //         difficulty = Difficulty.Hard;
-    //     Debug.Log("Next Difficulty: " + gameData.nextDifficulty);
-    //     Debug.Log("cEasy: " + gameData.cEasy);
-    //     Debug.Log("xEasy: " + gameData.xEasy);
-    //     Debug.Log("cNormal: " + gameData.cNormal);
-    //     Debug.Log("xNormal: " + gameData.xNormal);
-    //     Debug.Log("cHard: " + gameData.cHard);
-    //     Debug.Log("xHard: " + gameData.xHard);
-    // }
 
     public class UCB1Algorithm
     {

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class sampah : pot
 {
-    private bool isSmashed = false;
+    private bool isHancur = false;
 
     // Override the Smash function
     public override void Smash()
     {
-        if (!isSmashed)
+        if (!isHancur)
         {
-            isSmashed = true;
+            isHancur = true;
             StartCoroutine(DisableObject());
         }
     }

@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df6cb07beba4a44ab76d1875895bd40, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: 3b76400f5427bb941a7ab165d955a48a, type: 3}
+  m_Name: FiveHitEnemyHealth
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 0}
-  items: []
-  numberOfKeys: 0
-  coins: 0
-  maxMagic: 10
-  currentMagic: 10
+  initialValue: 5
+  RuntimeValue: 5

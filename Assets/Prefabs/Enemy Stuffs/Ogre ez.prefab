@@ -507,7 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: {fileID: 11400000, guid: 4ad35627dadd200499e2dab5e0306d4f, type: 2}
+  dungeonRoom: {fileID: 0}
+  maxHealth: {fileID: 11400000, guid: d3db5a469f6665840bd6a8ca60943583, type: 2}
   health: 0
   enemyName: Dajal
   baseAttack: 4

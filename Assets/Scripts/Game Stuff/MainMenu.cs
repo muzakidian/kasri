@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject optionMenuPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,5 +62,17 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.Save();
 
         Debug.Log("SavedGame data has been reset.");
+    }
+    public void ShowMenuOptions()
+    {
+    // Cek apakah ada instance dari DungeonEnemyRoom
+    DungeonEnemyRoom dungeonRoom = FindObjectOfType<DungeonEnemyRoom>();
+    // Jika Options sudah aktif, nonaktifkan. Jika tidak, aktifkan.
+    bool isActive = optionMenuPanel.activeSelf;
+    optionMenuPanel.SetActive(!isActive);
+    }
+    public void BackToMenu()
+    {
+        optionMenuPanel.SetActive(false); // nonaktifkan optionsPanel
     }
 }
