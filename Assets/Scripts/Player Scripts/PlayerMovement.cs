@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
     public int numberOfFlashes;
     public Collider2D triggerCollider;
     public SpriteRenderer mySprite;
+    [SerializeField] private AudioSource swordAttackSound;
+    [SerializeField] private AudioSource damagedSound;
+    [SerializeField] private AudioSource interactSound;
+    [SerializeField] private AudioSource nembakSound;
 
     // Game Over
     // private bool isDead;
@@ -74,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("attack") && currentState != PlayerState.attack 
            && currentState != PlayerState.stagger)
         {
+            swordAttackSound.Play();
             StartCoroutine(AttackCo());
         }
         else if (Input.GetButtonDown("Second Weapon") && currentState != PlayerState.attack
@@ -81,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (playerInventory.CheckForItem(watergun))
             {
+                nembakSound.Play();
                 StartCoroutine(SecondAttackCo());
             }
         }
@@ -134,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (currentState != PlayerState.interact)
             {
+                interactSound.Play();
                 animator.SetBool("receiveItem", true);
                 currentState = PlayerState.interact;
                 receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
@@ -173,11 +180,12 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Knock(float knockTime, float damage)
     {
+        currentState = PlayerState.stagger;
         currentHealth.RuntimeValue -= damage; 
-        // Debug.Log(currentHealth.RuntimeValue);
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue > 0)
         {
+            damagedSound.Play();
             StartCoroutine(KnockCo(knockTime));
         }else{
             // isDead = true;

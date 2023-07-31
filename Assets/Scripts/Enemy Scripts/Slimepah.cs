@@ -13,6 +13,7 @@ public class Slimepah : Enemy
     [Header("Animator")]
     public Animator anim;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class Slimepah : Enemy
 
     public virtual void CheckDistance()
     {
-        // Argumen untuk enemy mengejar player 
+        // Argumen untuk enemy mengejar player
         if (Vector3.Distance(target.position,
                             transform.position) <= chaseRadius
          && Vector3.Distance(target.position,
@@ -44,7 +45,7 @@ public class Slimepah : Enemy
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                 changeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
-                ChangeState(EnemyState.walk);
+                // ChangeState(EnemyState.walk);
                 anim.SetBool("jalan", true);
             }
         }

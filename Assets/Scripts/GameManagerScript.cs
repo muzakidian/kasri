@@ -29,6 +29,10 @@ public class GameManagerScript : MonoBehaviour
     public void Restart()
     {
         dungeonEnemyRoom.DungeonCompleted(false);
+
+        Debug.Log("Score Easy: " + dungeonEnemyRoom.Ucb1ScoreEasy);
+        Debug.Log("ScoreNormal: " + dungeonEnemyRoom.Ucb1ScoreNormal);
+        Debug.Log("ScoreHard: " + dungeonEnemyRoom.Ucb1ScoreHard);
         playerMovement.currentHealth.RuntimeValue = playerMovement.currentHealth.initialValue;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

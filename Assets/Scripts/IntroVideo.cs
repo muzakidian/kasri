@@ -6,12 +6,21 @@ public class IntroVideo : MonoBehaviour
 {
     public PlayableDirector director;
     public string nextSceneName = "rumah";
-    public FadeEffect fadeEffect; // Referensi ke FadeEffect
+    // public FadeEffect fadeEffect; // Referensi ke FadeEffect
 
     void Start()
     {
         director.stopped += OnVideoFinished;
         director.Play();
+    }
+    void Update()
+    {
+        // Cek apakah pemain menekan tombol "Skip" atau input yang telah ditentukan untuk skip video.
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
+        {
+            // Panggil fungsi OnVideoFinished dengan mengirimkan direktor video yang sama.
+            OnVideoFinished(director);
+        }
     }
 
     void OnVideoFinished(PlayableDirector d)
@@ -19,7 +28,7 @@ public class IntroVideo : MonoBehaviour
         if (d == director)
         {
             // Panggil fungsi FadeOutAndLoadScene dari FadeEffect
-            fadeEffect.FadeOutAndLoadScene(nextSceneName);
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }

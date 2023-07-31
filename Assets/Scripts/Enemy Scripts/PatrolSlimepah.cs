@@ -54,8 +54,6 @@ public class PatrolSlimepah : Slimepah
 
 		}
 	}
-
-
     private void ChangeGoal()
 	{
         if(currentPoint == path.Length -1)

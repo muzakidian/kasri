@@ -5,6 +5,8 @@ using UnityEngine;
 public enum EnemyState{
     idle,
     walk,
+    chase,
+    death,
     attack,
     stagger
 }
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour {
     {
         if(deathEffect != null)
         {
+            currentState = EnemyState.death;
             GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(effect, deathEffectDelay);
         }

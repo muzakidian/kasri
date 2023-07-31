@@ -7,6 +7,7 @@ public class MagicPowerup : Powerup
 
     public Inventory playerInventory;
     public float magicValue;
+    [SerializeField] private AudioSource minumSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class MagicPowerup : Powerup
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            minumSound.Play();
             playerInventory.currentMagic += magicValue;
             powerupSignal.Raise();
             Destroy(this.gameObject);

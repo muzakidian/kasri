@@ -59,6 +59,7 @@ public class DungeonEnemyRoom : DungeonRoom
     public Door[] doors;
     public GameManagerScript gameManager;
     private PlayerMovement playerMovement;
+    [SerializeField] private AudioSource pintuSound;
     private string currentScene; // Menyimpan nama scene saat ini
     private void Start()
     {
@@ -71,7 +72,7 @@ public class DungeonEnemyRoom : DungeonRoom
         }
         else
         {
-        LoadUCB1Data();    
+            LoadUCB1Data();
         }
         GenerateWave();
         ActivateEnemiesToSpawn();
@@ -214,7 +215,7 @@ public class DungeonEnemyRoom : DungeonRoom
         {
             if (difficulty == Difficulty.Easy)
             {
-                if (cEasy == 1) // Jika player pertama kali memasuki tingkat kesulitan Easy
+                if (cEasy == 0) // Jika player pertama kali memasuki tingkat kesulitan Easy
                     cNormal = 1; // Set nilai cNormal menjadi 1
                 cEasy++;
                 xEasy = 1;
@@ -279,13 +280,9 @@ public class DungeonEnemyRoom : DungeonRoom
 
         // Menentukan tingkat kesulitan berdasarkan skor UCB1
         string currentDifficulty = difficulty.ToString();
-        nextDifficulty = ucb1Algorithm.DetermineNextDifficulty(ucb1ScoreEasy, ucb1ScoreNormal, ucb1ScoreHard, currentDifficulty);
+        nextDifficulty = ucb1Algorithm.DetermineNextDifficulty(ucb1ScoreEasy, ucb1ScoreNormal, ucb1ScoreHard, currentDifficulty, playerWon);
         Debug.Log("Current Difficulty: " + currentDifficulty);
-
-        // Menyimpan posisi player dan scene terakhir
-        // PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
-        // gameData.playerPosition = playerMovement.transform.position;
-        // gameData.lastScene = SceneManager.GetActiveScene().name;
+        Debug.Log("Next Difficulty: " + nextDifficulty);
 
         // Menyimpan data permainan
         SaveUCB1Data(nextDifficulty);
@@ -367,22 +364,15 @@ public class DungeonEnemyRoom : DungeonRoom
             float totalXHard = xHard;
 
             // Menghitung total permainan yang telah dilakukan di setiap tingkat kesulitan
-            float totalGamesEasy = totalCEasy;
-            float totalGamesNormal = totalCEasy + totalCNormal;
-            float totalGamesHard = totalCEasy + totalCNormal + totalCHard; // Total keseluruhan game yang dimainkan
+            float totalGames = totalCEasy + totalCNormal + totalCHard; // Total keseluruhan game yang dimainkan
 
-            // Menghitung rata-rata hasil (x) di setiap tingkat kesulitan
-            float averageXEasy = totalXEasy / totalGamesEasy;
-            float averageXNormal = totalXNormal / totalGamesNormal;
-            float averageXHard = totalXHard / totalGamesHard;
-
-            float defaultUCB1Score = 0f; // Nilai default yang dapat disesuaikan sesuai kebutuhan Anda
-            float ucb1ScoreEasy = (totalCEasy > 0f) ? (totalXEasy + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCEasy)) : defaultUCB1Score;
-            float ucb1ScoreNormal = (totalCNormal > 0f) ? (totalXNormal + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCNormal)) : defaultUCB1Score;
-            float ucb1ScoreHard = (totalCHard > 0f) ? (totalXHard + Mathf.Sqrt(2f * Mathf.Log(totalGamesHard + Mathf.Epsilon) / totalCHard)) : defaultUCB1Score;
-            Debug.Log("UCB1 Score Easy = totalXEasy(" + totalXEasy + ") + (2 * (log " + totalGamesHard + ") / totalCEasy(" + totalCEasy + "))");
-            Debug.Log("UCB1 Score Normal = totalXNormal(" + totalXNormal + ") + (2 * (log " + totalGamesHard + ") / totalCNormal(" + totalCNormal + "))");
-            Debug.Log("UCB1 Score Hard = totalXHard(" + totalXHard + ") + (2 * (log " + totalGamesHard + ") / totalCHard(" + totalCHard + "))");
+            float defaultUCB1Score = 0f; // Nilai default
+            float ucb1ScoreEasy = (totalCEasy > 0f) ? (totalXEasy + Mathf.Sqrt(2f * Mathf.Log(totalGames + Mathf.Epsilon) / totalCEasy)) : defaultUCB1Score;
+            float ucb1ScoreNormal = (totalCNormal > 0f) ? (totalXNormal + Mathf.Sqrt(2f * Mathf.Log(totalGames + Mathf.Epsilon) / totalCNormal)) : defaultUCB1Score;
+            float ucb1ScoreHard = (totalCHard > 0f) ? (totalXHard + Mathf.Sqrt(2f * Mathf.Log(totalGames + Mathf.Epsilon) / totalCHard)) : defaultUCB1Score;
+            Debug.Log("UCB1 Score Easy = totalXEasy(" + totalXEasy + ") + (2 * (log " + totalGames + ") / totalCEasy(" + totalCEasy + "))");
+            Debug.Log("UCB1 Score Normal = totalXNormal(" + totalXNormal + ") + (2 * (log " + totalGames + ") / totalCNormal(" + totalCNormal + "))");
+            Debug.Log("UCB1 Score Hard = totalXHard(" + totalXHard + ") + (2 * (log " + totalGames + ") / totalCHard(" + totalCHard + "))");
 
 
             // Mengembalikan skor UCB1 sesuai tingkat kesulitan saat ini
@@ -398,7 +388,7 @@ public class DungeonEnemyRoom : DungeonRoom
         }
 
 
-        public string DetermineNextDifficulty(float ucb1ScoreEasy, float ucb1ScoreNormal, float ucb1ScoreHard, string currentDifficulty)
+        public string DetermineNextDifficulty(float ucb1ScoreEasy, float ucb1ScoreNormal, float ucb1ScoreHard, string currentDifficulty, bool playerWon)
         {
 
             // Logika baru untuk penentuan tingkat kesulitan
@@ -426,6 +416,39 @@ public class DungeonEnemyRoom : DungeonRoom
             {
                 return currentDifficulty;
             }
+            else if (currentDifficulty == "Normal" && ucb1ScoreEasy == ucb1ScoreHard)
+            {
+                if (playerWon)
+                {
+                    return "Hard";
+                }
+                else
+                {
+                    return "Easy";
+                }
+            }
+            else if (currentDifficulty == "Hard" && ucb1ScoreEasy == ucb1ScoreNormal)
+            {
+                if (playerWon)
+                {
+                    return "Hard";
+                }
+                else
+                {
+                    return "Normal";
+                }
+            }
+            // else if (currentDifficulty == "Easy" && !playerWon)
+            // {
+            //     if (!playerWon)
+            //     {
+            //         return "Easy";
+            //     }
+            //     else
+            //     {
+            //         return "Normal";
+            //     }
+            // }
             else
             {
                 return currentDifficulty;
@@ -434,20 +457,20 @@ public class DungeonEnemyRoom : DungeonRoom
     }
     public void ResetUCB1Values()
     {
-    if (PlayerPrefs.HasKey("GameData"))
-    {
-        // Menghapus data SavedGame
-        PlayerPrefs.DeleteKey("GameData");
-        PlayerPrefs.DeleteKey("NextDifficulty");
-        PlayerPrefs.Save();
+        if (PlayerPrefs.HasKey("GameData"))
+        {
+            // Menghapus data SavedGame
+            PlayerPrefs.DeleteKey("GameData");
+            PlayerPrefs.DeleteKey("NextDifficulty");
+            PlayerPrefs.Save();
 
-        Debug.Log("SavedGame data has been reset.");
-    }
-    else
-    {
-        // Tidak ada data SavedGame yang tersimpan, tidak perlu menghapusnya
-        Debug.Log("No saved game data found.");
-    }
+            Debug.Log("SavedGame data has been reset.");
+        }
+        else
+        {
+            // Tidak ada data SavedGame yang tersimpan, tidak perlu menghapusnya
+            Debug.Log("No saved game data found.");
+        }
         // Reset nilai cEasy, cNormal, cHard, xEasy, xNormal, dan xHard
         cEasy = 0;
         cNormal = 0;
@@ -506,8 +529,8 @@ public class DungeonEnemyRoom : DungeonRoom
     {
         for (int i = 0; i < doors.Length; i++)
         {
+            pintuSound.Play();
             doors[i].Open();
-
         }
         Debug.Log("Open Doors");
 
