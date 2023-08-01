@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class sampah : pot
 {
+    public SampahSpawner spawner;
     private bool isHancur = false;
 
     // Override the Smash function
@@ -19,5 +20,5 @@ public class sampah : pot
     {
         yield return new WaitForSeconds(.3f);
         this.gameObject.SetActive(false);
-    }
+    } 
 }
