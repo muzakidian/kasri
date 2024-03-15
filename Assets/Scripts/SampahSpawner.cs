@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class SampahSpawner : MonoBehaviour
 {
-    public GameObject[] objectsToSpawn; // The objects to spawn.
-    public BoxCollider2D spawnArea;     // The area to spawn the objects in.
-    public int maxObjects = 10;         // Maximum number of objects to spawn.
-    public float spawnInterval = 1.0f;  // Time in seconds between each spawn.
+    public GameObject[] objectsToSpawn; 
+    public BoxCollider2D spawnArea;    
+    public int maxObjects = 10;  
+    public float spawnInterval = 1.0f;
 
-    private int objectsSpawned = 0;     // Number of objects spawned so far.
+    private int objectsSpawned = 0;   
 
     void Start()
     {
@@ -22,7 +22,6 @@ public class SampahSpawner : MonoBehaviour
         {
             SpawnRandomObject();
 
-            // Wait for the spawn interval before spawning the next object.
             yield return new WaitForSeconds(spawnInterval);
         }
     }

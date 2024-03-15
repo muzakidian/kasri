@@ -29,6 +29,10 @@ public class MainMenu : MonoBehaviour
         // Aktifkan GameObject "IntroController"
         SceneManager.LoadScene("Intro");
     }
+    public void Mabar()
+    {   
+        SceneManager.LoadScene("Loading");
+    }
     public void LoadGame()
     {
         // Cek apakah ada data SavedGame yang tersimpan

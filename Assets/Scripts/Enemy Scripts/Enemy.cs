@@ -48,9 +48,11 @@ public class Enemy : MonoBehaviour {
 
     private void TakeDamage(float damage)
     {
+        PlayerMovement playerScore = FindObjectOfType<PlayerMovement>();
         health -= damage;
         if(health <= 0 && dungeonRoom != null)
         {
+            playerScore.IncreaseScore();
             DeathEffect();
             MakeLoot();
             if (roomSignal != null)

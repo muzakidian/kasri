@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public enum PlayerState{
+public enum PlayerState
+{
     walk,
     attack,
     interact,
@@ -36,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
     public int numberOfFlashes;
     public Collider2D triggerCollider;
     public SpriteRenderer mySprite;
+
+    [Header("Fungsi Informasi Killed Enemy")]
+    PhotonView view;
+    public int playerScore;
+
     [SerializeField] private AudioSource swordAttackSound;
     [SerializeField] private AudioSource damagedSound;
     [SerializeField] private AudioSource interactSound;
@@ -48,34 +55,39 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerScore = 0; // Atur skor awal pemain ke 0
         currentState = PlayerState.walk;
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        view = GetComponent<PhotonView>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
         transform.position = startingPosition.initialValue;
     }
 
     // Update is called once per frame
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
-        change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");
-        if (currentState == PlayerState.walk || currentState == PlayerState.idle)
+        // if (view.IsMine)
         {
-            UpdateAnimationAndMove();
+            change = Vector3.zero;
+            change.x = Input.GetAxisRaw("Horizontal");
+            change.y = Input.GetAxisRaw("Vertical");
+            if (currentState == PlayerState.walk || currentState == PlayerState.idle)
+            {
+                UpdateAnimationAndMove();
+            }
         }
     }
     void Update()
     {
         // Apakah player sedang dalam ineraksi?
-        if(currentState == PlayerState.interact)
+        if (currentState == PlayerState.interact)
         {
             return;
         }
 
-        if(Input.GetButtonDown("attack") && currentState != PlayerState.attack 
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack
            && currentState != PlayerState.stagger)
         {
             swordAttackSound.Play();
@@ -96,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
+        // playerScore++; // Tambahkan 1 ke skor pemain
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
@@ -103,6 +116,16 @@ public class PlayerMovement : MonoBehaviour
         {
             currentState = PlayerState.walk;
         }
+    }
+
+    public void IncreaseScore()
+    {
+        playerScore++;
+    }
+
+    public int GetPlayerScore()
+    {
+        return playerScore;
     }
 
     private IEnumerator SecondAttackCo()
@@ -116,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
             currentState = PlayerState.walk;
         }
     }
-        private void MakeWaterball()
+    private void MakeWaterball()
     {
         if (playerInventory.currentMagic > 0)
         {
@@ -128,9 +151,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-        Vector3 ChooseWaterballDirection()
+    Vector3 ChooseWaterballDirection()
     {
-        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX"))* Mathf.Rad2Deg;
+        float temp = Mathf.Atan2(animator.GetFloat("moveY"), animator.GetFloat("moveX")) * Mathf.Rad2Deg;
         return new Vector3(0, 0, temp);
     }
 
@@ -165,7 +188,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true);
-        } else
+        }
+        else
         {
             animator.SetBool("moving", false);
         }
@@ -181,19 +205,21 @@ public class PlayerMovement : MonoBehaviour
     public void Knock(float knockTime, float damage)
     {
         currentState = PlayerState.stagger;
-        currentHealth.RuntimeValue -= damage; 
+        currentHealth.RuntimeValue -= damage;
         playerHealthSignal.Raise();
         if (currentHealth.RuntimeValue > 0)
         {
             damagedSound.Play();
             StartCoroutine(KnockCo(knockTime));
-        }else{
+        }
+        else
+        {
             // isDead = true;
             this.gameObject.SetActive(false);
             gameManager.gameOver();
         }
     }
-    
+
     private IEnumerator KnockCo(float knockTime)
     {
         if (myRigidbody != null)
@@ -210,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
     {
         int temp = 0;
         triggerCollider.enabled = false;
-        while(temp < numberOfFlashes)
+        while (temp < numberOfFlashes)
         {
             mySprite.color = flashColor;
             yield return new WaitForSeconds(flashDuration);
